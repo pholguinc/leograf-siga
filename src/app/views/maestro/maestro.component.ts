@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./maestro.component.css']
 })
 export class MaestroComponent {
-
+  nombreUsuario:string = "Sebastián Olivera Leyva"
+  fechaUltimoIngreso:string = '13/04/2024 17:20 pm'
 }

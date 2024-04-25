@@ -1,1 +1,79 @@
-<p>maestro compoenent works!</p>
+<header class="header">
+
+  <div class="logo">
+    <img src="../../../assets/images/images.ico" alt="">
+    <ul>
+      <li class="sub-menu">Bienvenido(a)</li>
+      <li class="sub-menu">{{nombreUsuario}}</li>
+    </ul>
+  </div>
+
+  <nav class="menu-sesion">
+    <ul>
+      <li class="sub-menu">Ultimo ingreso: {{fechaUltimoIngreso}}</li>
+      <li class="sub-menu sesion"><a href="/maestro">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<nz-content>
+
+  <div style="text-align: center;">
+    <img src="../../../assets/images/logo-leograf.png" alt="">
+  </div>
+
+  <div class="container">
+    <div class="opciones">
+
+      <div>
+        <a href="/admin">
+          <div class="circulo">
+            <span nz-icon nzType="lock" nzTheme="outline"></span>
+          </div>
+        </a>
+        <p>Seguridad</p>
+      </div>
+
+      <div>
+        <a href="/maestro">
+          <div class="circulo">
+            <span nz-icon nzType="menu" nzTheme="outline"></span>
+          </div>
+        </a>
+        <p>Tablas maestras</p>
+      </div>
+
+      <div>
+        <a href="/maestro">
+          <div class="circulo">
+            <span nz-icon nzType="inbox" nzTheme="outline"></span>
+          </div>
+        </a>
+        <p>Inventario</p>
+      </div>
+
+      <div>
+        <a href="/maestro">
+          <div class="circulo">
+            <span nz-icon nzType="border" nzTheme="outline"></span>
+          </div>
+        </a>
+        <p>Producción</p>
+      </div>
+
+      <div>
+        <a href="/maestro">
+          <div class="circulo">
+            <span nz-icon nzType="unordered-list" nzTheme="outline"></span>
+          </div>
+        </a>
+        <p>Facturación</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</nz-content>
