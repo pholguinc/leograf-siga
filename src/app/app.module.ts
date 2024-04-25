@@ -13,13 +13,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NgZorroAntdModule } from './ng-zorro.module';
+import { LayoutModule } from './layout/layout.module';
 
 registerLocaleData(es);
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -28,11 +28,12 @@ registerLocaleData(es);
     AppRoutingModule,
     IconsProviderModule,
     NzLayoutModule,
-    NzMenuModule
+    NzMenuModule,
+    NgZorroAntdModule,
+    LayoutModule
   ],
-  providers: [
-    { provide: NZ_I18N, useValue: es_ES }
-  ],
-  bootstrap: [AppComponent]
+  providers: [{ provide: NZ_I18N, useValue: es_ES }],
+  bootstrap: [AppComponent],
+  exports: [NgZorroAntdModule],
 })
-export class AppModule { }
+export class AppModule {}
