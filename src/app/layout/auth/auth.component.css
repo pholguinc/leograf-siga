@@ -1,9 +1,49 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-.bg-image{
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,700&display=swap');
+.bg-image {
   height: 100vh;
   background-size: cover;
 }
 
+[nz-form] {
+  max-width: 600px;
+}
+
+.ant-select.ant-select-in-form-item.phone-select {
+  width: 70px;
+}
+
+.nz-form-item {
+  display: flex;
+  align-items: center;
+}
+
+.nz-form-label {
+  flex: 0 0 30%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.ant-form-item-label{
+  text-align: left;;
+}
+.nz-form-control {
+  flex: 1;
+}
+
+.header-login{
+  min-height: 50px;
+  width: 100%;
+}
+
+.ant-form-item-label > label{
+  font-size: 18px;
+}
+
+a{
+  font-size: 1rem;
+}
+
+.header-card-login{
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+}
