@@ -6,7 +6,7 @@ import { MaestroComponent } from './views/maestro/maestro.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: '', pathMatch: 'full', redirectTo: '/maestro' },
   {
     path: 'auth',
     component: AuthComponent,
