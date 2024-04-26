@@ -1,32 +1,29 @@
-  .input-wrapper {
-    position: relative;
-  }
+.bordered-div, .bordered-contrasenia {
+  position: relative;
+  border: 3px solid black;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+}
+.bordered-div::before {
+  content: "Datos Personales";
+  position: absolute;
+  top: -13px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 1.1rem;
+}
 
-  .input-container {
-    border: 1px solid gray;
-    border-radius: 6px;
-    position: relative;
-    width: 100%;
-    margin: 10px;
-    line-height: 2em; /* Ajusta según sea necesario */
-    padding: 0 5px; /* Añade espacio interior para el texto */
-    min-height: 2em; /* Ajusta según sea necesario */
-    display: flex;
-    align-items: center; /* Alinea verticalmente el texto */
-  }
+.bordered-contrasenia::before {
+  content: "Datos de contraseña";
+  position: absolute;
+  top: -13px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 1.1rem;
+}
 
-  .label-text {
-    position: absolute;
-    top: 0.2ex;
-    z-index: 1;
-    left: 2em;
-    background-color: white;
-    padding: 0 5px;
-  }
+.ant-form-item-label {
+    padding-left: 0px !important;
+}
 
-  .input-text {
-    border: none;
-    background: none;
-    flex: 1;
-    outline: none; /* Evita el resaltado al hacer clic */
-  }

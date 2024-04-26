@@ -33,10 +33,17 @@ const routes: Routes = [
             './views/auth/recuperar-contrasenia-aviso/recuperar-contrasenia-aviso.module'
           ).then((m) => m.RecuperarContraseniaAvisoModule),
       },
+      {
+        path: 'registro/aviso',
+        loadChildren: () =>
+              import('./views/auth/registro-aviso/registro-aviso.module').then(
+                (m) => m.RegistroAvisoModule
+              ),
+      },
     ],
   },
   {
-    path: 'registro',
+    path: 'auth/registro',
     component: RegistroLayoutComponent,
     children: [
       {
