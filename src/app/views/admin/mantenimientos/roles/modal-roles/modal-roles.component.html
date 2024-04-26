@@ -1,5 +1,6 @@
 <nz-modal
   [(nzVisible)]="isVisible"
+  nzWidth = "50%"
   [nzTitle]="modalTitle"
   [nzContent]="modalBody"
   [nzFooter]="modalFooter"
@@ -7,7 +8,7 @@
   [nzMaskClosable]="false"
   [nzKeyboard]="false"
 >
-  <ng-template class="cabezera" #modalTitle>
+  <ng-template #modalTitle>
     <span>{{ titleModal }}</span>
   </ng-template>
 
@@ -50,7 +51,7 @@
 
   <ng-template #modalFooter>
     <div style="text-align: center">
-      <button nz-button nzType="primary">
+      <button nz-button nzType="primary" (click)="showConfirm()">
         Guardar
       </button>
       <button
