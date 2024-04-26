@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthComponent } from './layout/auth/auth.component';
+import { LoginAuthLayoutComponent } from './layout/auth/login/login-auth-layout.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { MaestroComponent } from './views/maestro/maestro.component';
 import { RecuperarContraseniaAvisoModule } from './views/auth/recuperar-contrasenia-aviso/recuperar-contrasenia-aviso.module';
+import { RegistroLayoutComponent } from './layout/auth/registro/registro-layout-component.component';
+import { HomeComponent } from './views/admin/home/home.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/maestro' },
   {
     path: 'auth',
-    component: AuthComponent,
+    component: LoginAuthLayoutComponent,
     children: [
       {
         path: 'login',
@@ -34,6 +36,19 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'registro',
+    component: RegistroLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./views/auth/registro/registro.module').then(
+            (m) => m.RegistroModule
+          ),
+      },
+    ],
+  },
+  {
     path: 'admin',
     component: AdminComponent,
     children: [
@@ -41,6 +56,18 @@ const routes: Routes = [
         path: '',
         loadChildren: () =>
           import('./views/admin/home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'mantenimientos',
+        children: [
+          {
+            path: 'roles',
+            loadChildren: () =>
+              import('./views/admin/mantenimientos/roles/roles.module').then(
+                (m) => m.RolesModule
+              ),
+          },
+        ],
       },
     ],
   },
