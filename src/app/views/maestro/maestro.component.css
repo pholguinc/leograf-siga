@@ -1,7 +1,13 @@
 *{
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+nz-avatar {
+  margin: 0 6px 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header{
@@ -17,13 +23,6 @@
   display: flex;
 }
 
-.logo img{
-  width: 55px;
-  height: 55px;
-  margin: 5px 5px 0 0;
-  border-radius: 50%;
-}
-
 .sub-menu{
   color: #f2f2f2;
   list-style: none;
@@ -32,18 +31,25 @@
   margin-right: 5px;
 }
 
-.sub-menu a{
-  color: #f2f2f2;
+.menu-sesion{
+  text-align: end;
+}
+
+nz-header{
+  justify-content: space-around;
 }
 
 .menu-sesion{
   text-align: end;
 }
 
-.opciones{
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
+.sub-menu a{
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.sub-menu a:hover{
+  text-decoration: underline;
 }
 
 .circulo{
@@ -60,8 +66,3 @@
 [nz-icon] {
   font-size: 40px;
 }
-
-.container{
-  margin: 0 25% 0 25%;
-}
-
