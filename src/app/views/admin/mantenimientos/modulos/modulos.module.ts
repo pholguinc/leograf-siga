@@ -3,21 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { ModulosRoutingModule } from './modulos-routing.module';
 import { ModulosComponent } from './modulos.component';
-import { NgZorroAntdModule } from 'src/app/ng-zorro.module';
-import { ModalModulosComponent } from './modal-modulos/modal-modulos.component';
-import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ModalModuloComponent } from './modal-modulo/modal-modulo.component';
 
 
 @NgModule({
   declarations: [
     ModulosComponent,
-    ModalModulosComponent
+    ModalModuloComponent
   ],
   imports: [
     CommonModule,
-    ModulosRoutingModule,
-    NgZorroAntdModule,
-    NzModalModule
+    ModulosRoutingModule
   ]
 })
 export class ModulosModule { }
