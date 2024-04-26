@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RegistroRoutingModule } from './registro-routing.module';
 import { RegistroComponent } from './registro.component';
 import { NgZorroAntdModule } from 'src/app/ng-zorro.module';
+import { FormControl, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { NgZorroAntdModule } from 'src/app/ng-zorro.module';
   imports: [
     CommonModule,
     RegistroRoutingModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    FormsModule
+
   ]
 })
 export class RegistroModule { }

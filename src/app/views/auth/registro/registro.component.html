@@ -1,25 +1,166 @@
 <h4 class="text-white bg-dark p-3 text-center font-weight-bold">
   COMPLETA TU REGISTRO
 </h4>
-<div class="p-4 mt-3">
+<div class="mt-5">
   <form nz-form>
-    <div nz-row>
+    <div nz-row [nzGutter]="16">
       <div nz-col [nzSpan]="24">
-        <div class="input-wrapper">
-  <label for="first" class="label-text">First</label>
-  <div class="input-container">
-    <div class="input-text" contenteditable="true"></div>
-  </div>
-</div>
+        <div class="bordered-div">
+          <div class="p-4">
+            <div nz-row class="mb-1" [nzGutter]="24">
+              <div nz-col nzXs="24" nzMd="12" nzLg="12">
+                <nz-form-label>Tipo de documento</nz-form-label>
+                <nz-form-item>
+                  <nz-form-control [nzSpan]="24">
+                    <nz-select
+                      nzShowSearch
+                      nzAllowClear
+                      nzPlaceHolder="--Seleccione--"
+                      class="border border-dark"
+                    >
+                      <ng-container>
+                        <nz-option nzLabel="Text" [nzValue]="0"></nz-option>
+                      </ng-container>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col nzXs="24" nzMd="12" nzLg="12">
+                <nz-form-label>N° de documento</nz-form-label>
+                <nz-form-item>
+                  <nz-form-control [nzSpan]="24">
+                    <input
+                      nz-input
+                      class="border border-dark"
+                      placeholder="Ingrese tu N° de documento"
+                    />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+
+            <div nz-row class="mb-1" [nzGutter]="24">
+              <div nz-col nzXs="24" nzMd="12" nzLg="12">
+                <nz-form-label>Nombres</nz-form-label>
+                <nz-form-item>
+                  <nz-form-control [nzSpan]="24">
+                    <input
+                      nz-input
+                      class="border border-dark"
+                      placeholder="Ingresa tus nombres"
+                    />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col nzXs="24" nzMd="12" nzLg="12">
+                <nz-form-label>Apellidos</nz-form-label>
+                <nz-form-item>
+                  <nz-form-control [nzSpan]="24">
+                    <input
+                      nz-input
+                      class="border border-dark"
+                      placeholder="Ingresa tus apellidos"
+                    />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+
+            <div nz-row class="mb-1" [nzGutter]="24">
+              <div nz-col nzXs="24" nzMd="24" nzLg="24">
+                <nz-form-label>Correo electrónico</nz-form-label>
+                <nz-form-item>
+                  <nz-form-control [nzSpan]="24">
+                    <input nz-input class="border border-dark" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div nz-col [nzSpan]="24" class="mt-5">
+        <div class="bordered-contrasenia">
+          <div class="p-4">
+            <div nz-row [nzGutter]="24">
+              <div nz-col class="gutter-row" [nzSpan]="24" nzXs="24" nzMd="12" nzLg="12">
+                <div class="inner-box">
+                  <div nz-row class="mb-1" [nzGutter]="24">
+                    <div nz-col nzXs="24" nzMd="24" nzLg="24">
+                      <nz-form-label>Contraseña</nz-form-label>
+                      <nz-form-item>
+                        <nz-form-control [nzSpan]="24">
+                          <nz-input-group [nzSuffix]="suffixTemplate" class="border border-dark">
+                            <input
+                              [type]="passwordVisible ? 'text' : 'password'"
+                              nz-input
+                              placeholder="Ingresa una contraseña"
+                              [(ngModel)]="password"
+                            />
+                          </nz-input-group>
+                          <ng-template #suffixTemplate>
+                            <span
+                              nz-icon
+                              [nzType]="
+                                passwordVisible ? 'eye-invisible' : 'eye'
+                              "
+                              (click)="passwordVisible = !passwordVisible"
+                            ></span>
+                          </ng-template>
+                        </nz-form-control>
+                      </nz-form-item>
+                    </div>
+                    <div nz-col nzXs="24" nzMd="24" nzLg="24">
+                      <nz-form-label>Recuperar Contraseña</nz-form-label>
+                      <nz-form-item>
+                        <nz-input-group [nzSuffix]="suffixTemplate" class="border border-dark">
+                          <input
+                            [type]="passwordRecoveryVisible ? 'text' : 'password'"
+                            nz-input
+                            placeholder="Confirma la contraseña"
+                            [(ngModel)]="passwordRecovery"
+                          />
+                        </nz-input-group>
+                        <ng-template #suffixTemplate>
+                          <span
+                            nz-icon
+                            [nzType]="passwordRecoveryVisible ? 'eye-invisible' : 'eye'"
+                            (click)="passwordRecoveryVisible = !passwordRecoveryVisible"
+                          ></span>
+                        </ng-template>
+                      </nz-form-item>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div nz-col class="gutter-row" [nzSpan]="24" nzXs="24" nzMd="12" nzLg="12">
+                <div class="inner-box p-3">
+                  <p>
+                    Para crear la contraseña se debe considerar cono mínimo:
+                  </p>
+                  <ul class="list-contrasenia">
+                    <li>Min 8 caracteres</li>
+                    <li>Ningun espacio</li>
+                    <li>1 número</li>
+                    <li>1 caracter especial</li>
+                    <li>1 minúscula</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="text-center">
-      <a href="#" class="btn btn-primary d-inline-block mb-2">Ingresar</a>
-      <br />
-      <a href="#" class="d-inline-block"
-        >¿Olvidaste tu contraseña? Recupérala aquí</a
-      >
+    <div nz-row [nzJustify]="'center'" class="mt-3">
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="primary">Ingresar</button>
+          <br />
+          <a href="#" class="d-inline-block">¿Olvidaste tu contraseña? Recupérala aquí</a>
+        </nz-form-control>
+      </nz-form-item>
     </div>
   </form>
 </div>

@@ -3,16 +3,18 @@
   style="background-image: url('../../../assets/images/bg-login.jpg')"
 >
   <!-- <router-outlet></router-outlet> -->
-  <div nz-row class="pd-5">
-    <div nz-col nzSpan="14"></div>
-    <div nz-col nzSpan="10" class="p-5">
-      <div class="card" style="width: 38rem">
+  <div nz-row [nzGutter]="16">
+    <div nz-col [nzXs]="{ span: 24 }" [nzMd]="{ span: 14 }"></div>
+    <div nz-col [nzXs]="{ span: 24 }" [nzMd]="{ span: 10 }">
+      <div class="p-5 d-flex justify-content-center">
+        <div class="card" style="width: 90%">
         <div class="card-header p-0 header-login bg-secondary"></div>
         <div class="p-2 d-flex justify-content-center">
           <img
             src="../../../assets/images/logo-leograf.png"
             alt=""
             width="300"
+            class="img-fluid"
           />
         </div>
         <div class="card-body">
@@ -20,6 +22,7 @@
             <router-outlet></router-outlet>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>

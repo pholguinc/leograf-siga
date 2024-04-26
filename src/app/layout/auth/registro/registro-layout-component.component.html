@@ -1,18 +1,10 @@
-<div
-  class="bg-image"
-  style="background-image: url('../../../assets/images/bg-login.jpg')"
->
-  <!-- <router-outlet></router-outlet> -->
-  <div nz-row class="pd-5">
-    <div nz-col nzSpan="12" nzOffset="6" class="p-5">
-      <div class="card" style="width: 65rem">
+<div class="bg-image">
+  <div nz-row class="p-5" [nzGutter]="16">
+    <div nz-col [nzSpan]="24" [nzMd]="{ span: 12, offset: 6 }" class="p-5">
+      <div class="card">
         <div class="card-header p-0 header-registro bg-secondary"></div>
         <div class="p-2 d-flex justify-content-center">
-          <img
-            src="../../../assets/images/logo-leograf.png"
-            alt=""
-            width="300"
-          />
+          <img src="../../../assets/images/logo-leograf.png" alt="" width="300" class="img-fluid" />
         </div>
         <div class="card-body">
           <div class="border border-secondary p-4">
