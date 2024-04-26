@@ -81,6 +81,10 @@ const routes: Routes = [
                 './views/admin/mantenimientos/modulos/modulos.module'
               ).then((m) => m.ModulosModule),
           },
+          {
+            path: 'usuarios',
+            loadChildren: () => import('./views/admin/mantenimientos/usuarios/usuarios.module').then((m)=>m.UsuariosModule)
+          }
         ],
       },
     ],
