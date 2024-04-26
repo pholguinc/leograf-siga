@@ -36,9 +36,9 @@ const routes: Routes = [
       {
         path: 'registro/aviso',
         loadChildren: () =>
-              import('./views/auth/registro-aviso/registro-aviso.module').then(
-                (m) => m.RegistroAvisoModule
-              ),
+          import('./views/auth/registro-aviso/registro-aviso.module').then(
+            (m) => m.RegistroAvisoModule
+          ),
       },
     ],
   },
@@ -73,6 +73,13 @@ const routes: Routes = [
               import('./views/admin/mantenimientos/roles/roles.module').then(
                 (m) => m.RolesModule
               ),
+          },
+          {
+            path: 'modulos',
+            loadChildren: () =>
+              import(
+                './views/admin/mantenimientos/modulos/modulos.module'
+              ).then((m) => m.ModulosModule),
           },
         ],
       },
