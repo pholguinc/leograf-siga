@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './layout/auth/auth.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { MaestroComponent } from './views/maestro/maestro.component';
+import { RecuperarContraseniaAvisoModule } from './views/auth/recuperar-contrasenia-aviso/recuperar-contrasenia-aviso.module';
 
 
 const routes: Routes = [
@@ -10,12 +11,27 @@ const routes: Routes = [
   {
     path: 'auth',
     component: AuthComponent,
-    children:[
+    children: [
       {
         path: 'login',
-        loadChildren:() => import('./views/auth/login/login.module').then(m=>m.LoginModule)
+        loadChildren: () =>
+          import('./views/auth/login/login.module').then((m) => m.LoginModule),
       },
-    ]
+      {
+        path: 'recuperar-contrasenia',
+        loadChildren: () =>
+          import(
+            './views/auth/recuperar-contrasenia/recuperar-contrasenia.module'
+          ).then((m) => m.RecuperarContraseniaModule),
+      },
+      {
+        path: 'recuperar-contrasenia-aviso',
+        loadChildren: () =>
+          import(
+            './views/auth/recuperar-contrasenia-aviso/recuperar-contrasenia-aviso.module'
+          ).then((m) => m.RecuperarContraseniaAvisoModule),
+      },
+    ],
   },
   {
     path: 'admin',
@@ -23,10 +39,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./views/admin/home/home.module').then(m=>m.HomeModule)
-
-      }
-    ]
+        loadChildren: () =>
+          import('./views/admin/home/home.module').then((m) => m.HomeModule),
+      },
+    ],
   },
   {
     path: 'maestro',
@@ -34,10 +50,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren:()=> import('./views/maestro/maestro.module').then(m=>m.MaestroModule)
-      }
-    ]
-  }
+        loadChildren: () =>
+          import('./views/maestro/maestro.module').then((m) => m.MaestroModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
