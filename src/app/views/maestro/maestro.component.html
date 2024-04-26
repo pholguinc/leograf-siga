@@ -1,7 +1,7 @@
 <header class="header">
 
   <div class="logo">
-    <img src="../../../assets/images/images.ico" alt="">
+    <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
     <ul>
       <li class="sub-menu">Bienvenido(a)</li>
       <li class="sub-menu">{{nombreUsuario}}</li>
@@ -23,10 +23,9 @@
     <img src="../../../assets/images/logo-leograf.png" alt="">
   </div>
 
-  <div class="container">
-    <div class="opciones">
-
-      <div>
+  <div class="d-flex flex-wrap justify-content-center gap-1" style="text-align: center;">
+    <div class="row">
+      <div class="col">
         <a href="/admin">
           <div class="circulo">
             <span nz-icon nzType="lock" nzTheme="outline"></span>
@@ -34,8 +33,7 @@
         </a>
         <p>Seguridad</p>
       </div>
-
-      <div>
+      <div class="col">
         <a href="/maestro">
           <div class="circulo">
             <span nz-icon nzType="menu" nzTheme="outline"></span>
@@ -44,7 +42,7 @@
         <p>Tablas maestras</p>
       </div>
 
-      <div>
+      <div class="col">
         <a href="/maestro">
           <div class="circulo">
             <span nz-icon nzType="inbox" nzTheme="outline"></span>
@@ -53,7 +51,7 @@
         <p>Inventario</p>
       </div>
 
-      <div>
+      <div class="col">
         <a href="/maestro">
           <div class="circulo">
             <span nz-icon nzType="border" nzTheme="outline"></span>
@@ -62,7 +60,7 @@
         <p>Producción</p>
       </div>
 
-      <div>
+      <div class="col">
         <a href="/maestro">
           <div class="circulo">
             <span nz-icon nzType="unordered-list" nzTheme="outline"></span>
@@ -72,8 +70,6 @@
       </div>
 
     </div>
-
   </div>
-
 
 </nz-content>
