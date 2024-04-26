@@ -1,0 +1,4 @@
+.paginacion{
+  justify-content: space-between;
+  display: flex;
+}

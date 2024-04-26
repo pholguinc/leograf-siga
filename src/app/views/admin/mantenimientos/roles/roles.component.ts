@@ -7,4 +7,24 @@ import { Component } from '@angular/core';
 })
 export class RolesComponent {
 
+  index:number = 1
+  size:number = 100
+  isVisible:boolean = false;
+
+  onGuardarAceptar(event:any){
+    if(event){
+      this.isVisible = false;
+    }
+  }
+
+  onCerrarCancelar(event:any){
+    if(event){
+      this.isVisible = false;
+    }
+  }
+
+  showModal(){
+    this.isVisible = true;
+  }
+
 }

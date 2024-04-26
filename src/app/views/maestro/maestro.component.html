@@ -23,53 +23,65 @@
     <img src="../../../assets/images/logo-leograf.png" alt="">
   </div>
 
-  <div class="d-flex flex-wrap justify-content-center gap-1" style="text-align: center;">
-    <div class="row">
-      <div class="col">
-        <a href="/admin">
-          <div class="circulo">
-            <span nz-icon nzType="lock" nzTheme="outline"></span>
-          </div>
-        </a>
+  <div style="width: max;">
+
+    <div nz-row nzJustify="center" style="text-align: center;" [nzGutter]="24">
+      <div nz-col>
+        <nz-form-item>
+          <a href="/admin/mantenimientos/roles">
+            <div class="circulo">
+              <span nz-icon nzType="lock" nzTheme="outline"></span>
+            </div>
+          </a>
+        </nz-form-item>
         <p>Seguridad</p>
       </div>
-      <div class="col">
-        <a href="/maestro">
-          <div class="circulo">
-            <span nz-icon nzType="menu" nzTheme="outline"></span>
-          </div>
-        </a>
+
+      <div nz-col>
+        <nz-form-item>
+          <a href="/maestro">
+            <div class="circulo">
+              <span nz-icon nzType="menu" nzTheme="outline"></span>
+            </div>
+          </a>
+        </nz-form-item>
         <p>Tablas maestras</p>
       </div>
 
-      <div class="col">
-        <a href="/maestro">
-          <div class="circulo">
-            <span nz-icon nzType="inbox" nzTheme="outline"></span>
-          </div>
-        </a>
+      <div nz-col>
+        <nz-form-item>
+          <a href="/maestro">
+            <div class="circulo">
+              <span nz-icon nzType="inbox" nzTheme="outline"></span>
+            </div>
+          </a>
+        </nz-form-item>
         <p>Inventario</p>
       </div>
 
-      <div class="col">
-        <a href="/maestro">
-          <div class="circulo">
-            <span nz-icon nzType="border" nzTheme="outline"></span>
-          </div>
-        </a>
+      <div nz-col>
+        <nz-form-item>
+          <a href="/maestro">
+            <div class="circulo">
+              <span nz-icon nzType="border" nzTheme="outline"></span>
+            </div>
+          </a>
+        </nz-form-item>
         <p>Producción</p>
       </div>
 
-      <div class="col">
-        <a href="/maestro">
-          <div class="circulo">
-            <span nz-icon nzType="unordered-list" nzTheme="outline"></span>
-          </div>
-        </a>
+      <div nz-col>
+        <nz-form-item>
+          <a href="/maestro">
+            <div class="circulo">
+              <span nz-icon nzType="unordered-list" nzTheme="outline"></span>
+            </div>
+          </a>
+        </nz-form-item>
         <p>Facturación</p>
       </div>
-
     </div>
+
   </div>
 
 </nz-content>
