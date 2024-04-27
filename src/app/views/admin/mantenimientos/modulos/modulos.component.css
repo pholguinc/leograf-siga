@@ -2,3 +2,20 @@
   justify-content: space-between;
   display: flex;
 }
+
+.bordered-div {
+  position: relative;
+  border: 3px solid black;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.bordered-div::before {
+  content: "Filtros de la búsqueda";
+  position: absolute;
+  top: -13px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 1.1rem;
+}

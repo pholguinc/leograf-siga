@@ -13,8 +13,7 @@
 <div class="p-3">
   <div nz-row [nzGutter]="{ xs: 24, sm: 24, md: 12, lg: 12 }">
     <div nz-col class="gutter-row" [nzSpan]="18">
-
-        <div class="bordered-div">
+      <div class="bordered-div">
           <div class="p-2">
             <div nz-row [nzGutter]="24">
               <div nz-col nzLg="24">
@@ -31,48 +30,46 @@
               </div>
             </div>
 
-          <div nz-row [nzGutter]="24">
-            <div nz-col nzLg="24">
-              <nz-form-item>
-                <nz-form-label>Estado</nz-form-label>
-                <nz-form-control [nzSpan]="24">
-                  <nz-select
-                    nzShowSearch
-                    nzAllowClear
-                    nzPlaceHolder="Todos"
-                  >
-                    <nz-option nzValue="1" nzLabel="Activo"></nz-option>
-                    <nz-option nzValue="2" nzLabel="Inactivo"></nz-option>
-                  </nz-select>
-                </nz-form-control>
-              </nz-form-item>
-            </div>
+            <div nz-row [nzGutter]="24">
+              <div nz-col nzLg="24">
+                <nz-form-item>
+                  <nz-form-label>Estado</nz-form-label>
+                  <nz-form-control [nzSpan]="24">
+                    <nz-select
+                      nzShowSearch
+                      nzAllowClear
+                      nzPlaceHolder="Todos"
+                    >
+                      <nz-option nzValue="1" nzLabel="Activo"></nz-option>
+                      <nz-option nzValue="2" nzLabel="Inactivo"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
           </div>
         </div>
       </div>
     </div>
 
     <div nz-col class="gutter-row" [nzSpan]="6">
-      <div nz-row class="p-2">
-        <div nz-col>
-          <button nz-button nzType="primary">Buscar</button>
+      <div nz-row class="d-grid p-2">
+        <div nz-col class="d-grid">
+          <button class="btn btn-primary">Buscar</button>
         </div>
       </div>
 
-      <div nz-row class="p-2 ">
-        <div nz-col>
-          <button nz-button nzType="default">Limpiar</button>
+      <div nz-row class="d-grid p-2 ">
+        <div nz-col class="d-grid">
+          <button class="btn btn-secondary">Limpiar</button>
         </div>
       </div>
 
-      <div nz-row class="p-2">
-        <div nz-col>
-          <button nz-button (click)="showModal()" nzType="default">Nuevo registro</button>
+      <div nz-row class="d-grid p-2">
+        <div nz-col class="d-grid">
+          <button class="btn btn-primary" (click)="showModal()">Nuevo registro</button>
         </div>
       </div>
     </div>
-
-
 
   </div>
 </div>

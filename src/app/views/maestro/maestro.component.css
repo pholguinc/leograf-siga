@@ -53,14 +53,13 @@ nz-header{
 }
 
 .circulo{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   display: flex;
-  background-color: #F2BF27;
   align-items: center;
   justify-content: center;
-  color: #f2f2f2;
+  color: #000;
 }
 
 [nz-icon] {
