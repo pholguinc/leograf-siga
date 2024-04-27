@@ -4,6 +4,10 @@ import { SeguridadComponent } from './seguridad.component';
 import { RolesComponent } from './mantenimientos/roles/roles.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 import { ModulosComponent } from './mantenimientos/modulos/modulos.component';
+import { SedesComponent } from './mantenimientos/sedes/sedes.component';
+import { MenuComponent } from './mantenimientos/menu/menu.component';
+import { SubmenuComponent } from './mantenimientos/submenu/submenu.component';
+import { AsignacionRolesComponent } from './mantenimientos/asignacion-roles/asignacion-roles.component';
 
 const routes: Routes = [
   {
@@ -21,7 +25,24 @@ const routes: Routes = [
   {
     path: 'modulos',
     component: ModulosComponent
+  },
+  {
+    path: 'sedes',
+    component: SedesComponent
+  },
+  {
+    path: 'menu',
+    component: MenuComponent
+  },
+  {
+    path: 'submenu',
+    component: SubmenuComponent
+  },
+  {
+    path: 'asignar-roles',
+    component: AsignacionRolesComponent
   }
+
 ];
 
 @NgModule({

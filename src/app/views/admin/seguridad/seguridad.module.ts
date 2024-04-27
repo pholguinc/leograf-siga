@@ -11,11 +11,11 @@ import { ModulosComponent } from './mantenimientos/modulos/modulos.component';
 import { ModalModuloComponent } from './mantenimientos/modulos/modal-modulo/modal-modulo.component';
 import { SedesComponent } from './mantenimientos/sedes/sedes.component';
 import { ModalSedesComponent } from './mantenimientos/sedes/modal-sedes/modal-sedes.component';
-import { MenusComponent } from './mantenimientos/menus/menus.component';
-import { ModalMenusComponent } from './mantenimientos/menus/modal-menus/modal-menus.component';
 import { SubmenuComponent } from './mantenimientos/submenu/submenu.component';
 import { ModalSubmenuComponent } from './mantenimientos/submenu/modal-submenu/modal-submenu.component';
 import { AsignacionRolesComponent } from './mantenimientos/asignacion-roles/asignacion-roles.component';
+import { MenuComponent } from './mantenimientos/menu/menu.component';
+import { ModalMenuComponent } from './mantenimientos/menu/modal-menu/modal-menu.component';
 
 
 @NgModule({
@@ -28,11 +28,11 @@ import { AsignacionRolesComponent } from './mantenimientos/asignacion-roles/asig
     ModalModuloComponent,
     SedesComponent,
     ModalSedesComponent,
-    MenusComponent,
-    ModalMenusComponent,
     SubmenuComponent,
     ModalSubmenuComponent,
-    AsignacionRolesComponent
+    AsignacionRolesComponent,
+    MenuComponent,
+    ModalMenuComponent
   ],
   imports: [
     CommonModule,
