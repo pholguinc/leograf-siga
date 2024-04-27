@@ -8,7 +8,7 @@ import { NgZorroAntdModule } from 'src/app/ng-zorro.module';
 
 @NgModule({
   declarations: [
-    UsuariosComponent
+    UsuariosComponent,
   ],
   imports: [
     CommonModule,

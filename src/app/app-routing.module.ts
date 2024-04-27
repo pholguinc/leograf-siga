@@ -2,14 +2,40 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginAuthLayoutComponent } from './layout/auth/login/login-auth-layout.component';
 import { AdminComponent } from './layout/admin/admin.component';
-import { MaestroComponent } from './views/maestro/maestro.component';
-import { RecuperarContraseniaAvisoModule } from './views/auth/recuperar-contrasenia-aviso/recuperar-contrasenia-aviso.module';
 import { RegistroLayoutComponent } from './layout/auth/registro/registro-layout-component.component';
-import { HomeComponent } from './views/admin/home/home.component';
+import { HomeLayoutComponent } from './layout/home/home-layout.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/maestro' },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/admin',
+  },
+
+  {
+    path: 'home',
+    component: HomeLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren:() => import('./views/admin/home/home.module').then((m)=>m.HomeModule)
+      }
+    ]
+  },
+
+  {
+    path: 'home',
+    component: LoginAuthLayoutComponent,
+    children: [
+      {
+        path: 'inicio',
+        loadChildren: () =>
+          import('./views/admin/home/home.module').then((m) => m.HomeModule),
+      },
+    ],
+  },
+
   {
     path: 'auth',
     component: LoginAuthLayoutComponent,
@@ -55,51 +81,57 @@ const routes: Routes = [
       },
     ],
   },
+  // {
+  //   path: 'admin',
+  //   component: AdminComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       loadChildren: () =>
+  //         import('./views/admin/home/home.module').then((m) => m.HomeModule),
+  //     },
+  //     {
+  //       path: 'mantenimientos',
+  //       children: [
+  //         {
+  //           path: 'roles',
+  //           loadChildren: () =>
+  //             import('./views/admin/mantenimientos/roles/roles.module').then(
+  //               (m) => m.RolesModule
+  //             ),
+  //         },
+  //         {
+  //           path: 'modulos',
+  //           loadChildren: () =>
+  //             import(
+  //               './views/admin/mantenimientos/modulos/modulos.module'
+  //             ).then((m) => m.ModulosModule),
+  //         },
+  //         {
+  //           path: 'usuarios',
+  //           loadChildren: () =>
+  //             import(
+  //               './views/admin/mantenimientos/usuarios/usuarios.module'
+  //             ).then((m) => m.UsuariosModule),
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
+
+  //Módulos
   {
     path: 'admin',
     component: AdminComponent,
-    children: [
+    children:[
       {
-        path: '',
-        loadChildren: () =>
-          import('./views/admin/home/home.module').then((m) => m.HomeModule),
-      },
-      {
-        path: 'mantenimientos',
-        children: [
-          {
-            path: 'roles',
-            loadChildren: () =>
-              import('./views/admin/mantenimientos/roles/roles.module').then(
-                (m) => m.RolesModule
-              ),
-          },
-          {
-            path: 'modulos',
-            loadChildren: () =>
-              import(
-                './views/admin/mantenimientos/modulos/modulos.module'
-              ).then((m) => m.ModulosModule),
-          },
-          {
-            path: 'usuarios',
-            loadChildren: () => import('./views/admin/mantenimientos/usuarios/usuarios.module').then((m)=>m.UsuariosModule)
-          }
-        ],
-      },
-    ],
-  },
-  {
-    path: 'maestro',
-    component: MaestroComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./views/maestro/maestro.module').then((m) => m.MaestroModule),
-      },
-    ],
-  },
+        path: 'seguridad',
+        loadChildren:()=> import('./views/admin/seguridad/seguridad.module').then((m)=>m.SeguridadModule),
+
+      }
+    ]
+  }
+
 ];
 
 @NgModule({

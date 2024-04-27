@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { ModulosComponent } from './modulos/modulos.component';
 import { RegistroLayoutComponent } from './auth/registro/registro-layout-component.component';
+import { HomeLayoutComponent } from './home/home-layout.component';
 
 
 
 @NgModule({
-  declarations: [LoginAuthLayoutComponent, AdminComponent, ModulosComponent, RegistroLayoutComponent],
+  declarations: [LoginAuthLayoutComponent, AdminComponent, ModulosComponent, RegistroLayoutComponent, HomeLayoutComponent],
   imports: [CommonModule, NgZorroAntdModule, RouterModule],
 })
 export class LayoutModule {}

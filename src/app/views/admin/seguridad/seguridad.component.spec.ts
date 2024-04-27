@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MaestroComponent } from './maestro.component';
+import { SeguridadComponent } from './seguridad.component';
 
-describe('MaestroComponent', () => {
-  let component: MaestroComponent;
-  let fixture: ComponentFixture<MaestroComponent>;
+describe('SeguridadComponent', () => {
+  let component: SeguridadComponent;
+  let fixture: ComponentFixture<SeguridadComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MaestroComponent]
+      declarations: [SeguridadComponent]
     });
-    fixture = TestBed.createComponent(MaestroComponent);
+    fixture = TestBed.createComponent(SeguridadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
