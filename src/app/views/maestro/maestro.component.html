@@ -1,0 +1,87 @@
+<header class="header">
+
+  <div class="logo">
+    <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
+    <ul>
+      <li class="sub-menu">Bienvenido(a)</li>
+      <li class="sub-menu">{{nombreUsuario}}</li>
+    </ul>
+  </div>
+
+  <nav class="menu-sesion">
+    <ul>
+      <li class="sub-menu">Ultimo ingreso: {{fechaUltimoIngreso}}</li>
+      <li class="sub-menu sesion"><a href="/maestro">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<nz-content>
+
+  <div style="text-align: center;">
+    <img src="../../../assets/images/logo-leograf.png" alt="">
+  </div>
+
+  <div style="width: max;">
+
+    <div nz-row nzJustify="center" style="text-align: center;" [nzGutter]="24">
+      <div nz-col>
+        <nz-form-item>
+          <a href="/admin/mantenimientos/roles">
+            <div>
+              <img class="circulo" src="../../../assets/images/Seguridad.jpg" alt="">
+            </div>
+          </a>
+        </nz-form-item>
+        <p>Seguridad</p>
+      </div>
+
+      <div nz-col>
+        <nz-form-item>
+          <a href="/maestro">
+            <div>
+              <img class="circulo" src="../../../assets/images/Tablas-Maestras.jpg" alt="">
+            </div>
+          </a>
+        </nz-form-item>
+        <p>Tablas maestras</p>
+      </div>
+
+      <div nz-col>
+        <nz-form-item>
+          <a href="/maestro">
+            <div>
+              <img class="circulo" src="../../../assets/images/Inventario.jpg" alt="">
+            </div>
+          </a>
+        </nz-form-item>
+        <p>Inventario</p>
+      </div>
+
+      <div nz-col>
+        <nz-form-item>
+          <a href="/maestro">
+            <div>
+              <img class="circulo" src="../../../assets/images/Produccion.jpg" alt="">
+            </div>
+          </a>
+        </nz-form-item>
+        <p>Producción</p>
+      </div>
+
+      <div nz-col>
+        <nz-form-item>
+          <a href="/maestro">
+            <div>
+              <img class="circulo" src="../../../assets/images/Facturacion.jpg" alt="">
+            </div>
+          </a>
+        </nz-form-item>
+        <p>Facturación</p>
+      </div>
+    </div>
+
+  </div>
+
+</nz-content>

@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Component({
-  selector: 'app-modulos',
-  templateUrl: './modulos.component.html',
-  styleUrls: ['./modulos.component.css']
+  selector: 'app-roles',
+  templateUrl: './roles.component.html',
+  styleUrls: ['./roles.component.css']
 })
-export class ModulosComponent {
+export class RolesComponent {
 
-  index:number = 1;
-  size:number = 100;
+  index:number = 1
+  size:number = 100
   isVisible:boolean = false;
 
   constructor(
@@ -36,8 +36,8 @@ export class ModulosComponent {
 
   showDesactivarConfirm(): void {
     this.modal.confirm({
-      nzTitle: 'Inactivar módulo',
-      nzContent: '<span>¿Está seguro de que desea inactivar el módulo?</span><br><b>Al inactivar el módulo, este ya no se mostrará en el sistema.</b>',
+      nzTitle: 'Inactivar rol',
+      nzContent: '<span>¿Está seguro de que desea inactivar el rol?</span><br><b>Al inactivar el rol, este ya no se mostrará en el sistema.</b>',
       nzOkText: 'Yes',
       nzOkType: 'primary',
       nzOkDanger: true,
@@ -49,8 +49,8 @@ export class ModulosComponent {
 
   showActivarConfirm(): void {
     this.modal.confirm({
-      nzTitle: 'Activar módulo',
-      nzContent: '<span>¿Está seguro de que desea activar el módulo?</span><br><b>Al activar el módulo, este se volverá a mostrar en el sistema.</b>',
+      nzTitle: 'Activar rol',
+      nzContent: '<span>¿Está seguro de que desea activar el rol?</span><br><b>Al activar el rol, este se volverá a mostrar en el sistema.</b>',
       nzOkText: 'Yes',
       nzOkType: 'primary',
       nzOnOk: () => console.log('OK'),

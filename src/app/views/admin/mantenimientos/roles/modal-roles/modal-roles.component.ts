@@ -2,17 +2,16 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Component({
-  selector: 'app-modal-modulo',
-  templateUrl: './modal-modulo.component.html',
-  styleUrls: ['./modal-modulo.component.css']
+  selector: 'app-modal-roles',
+  templateUrl: './modal-roles.component.html',
+  styleUrls: ['./modal-roles.component.css']
 })
-export class ModalModuloComponent implements OnInit {
+export class ModalRolesComponent implements OnInit{
 
   @Output() onGuardarAceptar: EventEmitter<any>;
   @Output() onCerrarCancelar: EventEmitter<any>;
   public isVisible: boolean = true;
-  public titleModal: string = 'Agregar modulo';
-  public subDescargas: string = '(Imagen: Tipo .jpeg o .jpg. Peso 1 MB)';
+  public titleModal: string = 'Agregar rol';
 
   constructor(
     private modal: NzModalService
@@ -21,7 +20,10 @@ export class ModalModuloComponent implements OnInit {
     this.onCerrarCancelar = new EventEmitter<any>();
   }
 
-  ngOnInit(): void {
+  ngOnInit(
+
+  ): void {
+
 
   }
 
@@ -33,7 +35,7 @@ export class ModalModuloComponent implements OnInit {
   showConfirm(): void {
     this.modal.confirm({
       nzTitle: 'Confirmar edición',
-      nzContent: '<span>¿Está seguro de que desea editar el módulo?</span><br><b>Todos los datos asociados, serán modifcados a la nueva descripción.</b>',
+      nzContent: '<span>¿Está seguro de que desea editar el rol?</span><br><b>Todos los datos asociados, serán modifcados a la nueva descripción.</b>',
       nzOkText: 'Yes',
       nzOkType: 'primary',
       nzOnOk: () => this.handleCancel(),
