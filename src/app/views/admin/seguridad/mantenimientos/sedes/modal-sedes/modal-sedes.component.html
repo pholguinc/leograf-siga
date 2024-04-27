@@ -1,1 +1,66 @@
-<p>modal-sedes works!</p>
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzWidth = "50%"
+  [nzTitle]="modalTitle"
+  [nzContent]="modalBody"
+  [nzFooter]="modalFooter"
+  (nzOnCancel)="handleCancel()"
+  [nzMaskClosable]="false"
+  [nzKeyboard]="false"
+>
+  <ng-template #modalTitle>
+    <span>{{ titleModal }}</span>
+  </ng-template>
+
+  <ng-template #modalBody>
+    <ng-container>
+      <form nz-form>
+        <div nz-row [nzGutter]="24">
+
+          <div nz-col [nzSpan]="24">
+            <nz-form-item>
+              <nz-form-label nzRequired>Código</nz-form-label>
+              <nz-form-control [nzSpan]="24">
+                <input
+                  nz-input
+                  type="text"
+                  placeholder="Codigo"
+                  />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <div nz-col [nzSpan]="24">
+            <nz-form-item>
+              <nz-form-label nzRequired>Sede</nz-form-label>
+              <nz-form-control [nzSpan]="24">
+                <input
+                  nz-input
+                  type="text"
+                  placeholder="Sede"
+                  />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+        </div>
+      </form>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #modalFooter>
+    <div style="text-align: center">
+      <button nz-button nzType="primary" (click)="showConfirm()">
+        Guardar
+      </button>
+      <button
+        nz-button
+        nzType="default"
+        (click)="handleCancel()"
+      >
+        Cancelar
+      </button>
+    </div>
+  </ng-template>
+
+</nz-modal>

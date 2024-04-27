@@ -34,11 +34,11 @@ export class RolesComponent {
       nzTitle: 'Inactivar rol',
       nzContent:
         '<span>¿Está seguro de que desea inactivar el rol?</span><br><b>Al inactivar el rol, este ya no se mostrará en el sistema.</b>',
-      nzOkText: 'Yes',
+      nzOkText: 'Si',
       nzOkType: 'primary',
       nzOkDanger: true,
       nzOnOk: () => console.log('OK'),
-      nzCancelText: 'No',
+      nzCancelText: 'Cancelar',
       nzOnCancel: () => console.log('Cancel'),
     });
   }
@@ -48,10 +48,10 @@ export class RolesComponent {
       nzTitle: 'Activar rol',
       nzContent:
         '<span>¿Está seguro de que desea activar el rol?</span><br><b>Al activar el rol, este se volverá a mostrar en el sistema.</b>',
-      nzOkText: 'Yes',
+      nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => console.log('OK'),
-      nzCancelText: 'No',
+      nzCancelText: 'Cancelar',
       nzOnCancel: () => console.log('Cancel'),
     });
   }

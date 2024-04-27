@@ -1,1 +1,233 @@
-<p>menu works!</p>
+<div style="text-align: end;">
+  <nz-breadcrumb>
+    <nz-breadcrumb-item>Admin</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a>Mantenimiento</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>Menús</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</div>
+
+<br>
+
+<div class="p-3">
+  <div nz-row [nzGutter]="{ xs: 24, sm: 24, md: 12, lg: 12 }">
+    <div nz-col class="gutter-row" [nzSpan]="18">
+      <div class="bordered-div">
+        <div class="p-2">
+
+          <div nz-row [nzGutter]="24">
+            <div nz-col nzLg="24">
+              <nz-form-item>
+                <nz-form-label>Módulo</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <nz-select
+                    nzShowSearch
+                    nzAllowClear
+                    nzPlaceHolder="Todos"
+                  >
+                    <nz-option nzValue="1" nzLabel="Producción"></nz-option>
+                    <nz-option nzValue="2" nzLabel="Inventario"></nz-option>
+                    <nz-option nzValue="3" nzLabel="Seguridad"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row [nzGutter]="24">
+            <div nz-col nzLg="24">
+              <nz-form-item>
+                <nz-form-label>Menú</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input
+                    nz-input
+                    type="text"
+                    placeholder="Menú"
+                  />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row [nzGutter]="24">
+            <div nz-col nzLg="24">
+              <nz-form-item>
+                <nz-form-label>Estado</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <nz-select
+                    nzShowSearch
+                    nzAllowClear
+                    nzPlaceHolder="Todos"
+                  >
+                    <nz-option nzValue="1" nzLabel="Activo"></nz-option>
+                    <nz-option nzValue="2" nzLabel="Inactivo"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div nz-col [nzSpan]="6">
+      <div nz-row class="d-grid p-2">
+        <div nz-col class="d-grid">
+          <button class="btn btn-primary">Buscar</button>
+        </div>
+      </div>
+
+      <div nz-row class="d-grid p-2 ">
+        <div nz-col class="d-grid">
+          <button class="btn btn-secondary">Limpiar</button>
+        </div>
+      </div>
+
+      <div nz-row class="d-grid p-2">
+        <div nz-col class="d-grid">
+          <button class="btn btn-primary" (click)="showModal()">Nuevo registro</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<br>
+
+<div class="card shadow-container mb-2">
+  <div class="card-body">
+    <span class="card-title" style="font-weight: 600">Resultado del listado de roles:</span>
+    <div class="mb-3">
+      <nz-table
+      >
+        <thead>
+          <tr>
+            <th nzWidth="15%">Código</th>
+            <th nzWidth="20%">Módulo</th>
+            <th nzWidth="30%">Menú</th>
+            <th nzWidth="20%">Estado</th>
+            <th style="text-align: center" nzWidth="15%">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>001</td>
+            <td>Modulo 1</td>
+            <td>Menu 1</td>
+            <td>Desactivo</td>
+            <td style="text-align: center">
+              <button
+                nz-button nzType="default" nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Editar"
+              >
+              A
+              </button>
+              &nbsp;
+              <button
+                nz-button nzType="default" nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Activar"
+                (click)="showActivarConfirm()"
+              >
+              B
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>002</td>
+            <td>Modulo 2</td>
+            <td>Menu 2</td>
+            <td>Desactivo</td>
+            <td style="text-align: center">
+              <button
+                nz-button nzType="default" nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Editar"
+              >
+              A
+              </button>
+              &nbsp;
+              <button
+                nz-button nzType="default" nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Activar"
+                (click)="showActivarConfirm()"
+              >
+              B
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>003</td>
+            <td>Modulo 3</td>
+            <td>Menu 3</td>
+            <td>Activo</td>
+            <td style="text-align: center">
+              <button
+                nz-button nzType="default" nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Editar"
+              >
+              A
+              </button>
+              &nbsp;
+              <button
+                nz-button nzType="default" nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Desactivar"
+                (click)="showDesactivarConfirm()"
+              >
+              B
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>004</td>
+            <td>Modulo 4</td>
+            <td>Menu 4</td>
+            <td>Activo</td>
+            <td style="text-align: center">
+              <button
+                nz-button nzType="default" nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Editar"
+              >
+              A
+              </button>
+              &nbsp;
+              <button
+                nz-button nzType="default" nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Desactivar"
+                (click)="showDesactivarConfirm()"
+              >
+              B
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>
+
+<div class="paginacion">
+  <nz-pagination [nzPageIndex]="3" [nzTotal]="500" nzShowSizeChanger [nzPageSize]="10"></nz-pagination>
+  <span>Cantidad de registros {{index}} - {{size}}</span>
+</div>
+
+<ng-container *ngIf="isVisible">
+  <app-modal-menu
+    (onGuardarAceptar)="onGuardarAceptar($event)"
+    (onCerrarCancelar)="onCerrarCancelar($event)"
+  ></app-modal-menu>
+</ng-container>

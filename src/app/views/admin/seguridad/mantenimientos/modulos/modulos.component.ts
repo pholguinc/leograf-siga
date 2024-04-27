@@ -34,11 +34,11 @@ export class ModulosComponent {
       nzTitle: 'Inactivar módulo',
       nzContent:
         '<span>¿Está seguro de que desea inactivar el módulo?</span><br><b>Al inactivar el módulo, este ya no se mostrará en el sistema.</b>',
-      nzOkText: 'Yes',
+      nzOkText: 'Si',
       nzOkType: 'primary',
       nzOkDanger: true,
       nzOnOk: () => console.log('OK'),
-      nzCancelText: 'No',
+      nzCancelText: 'Cancelar',
       nzOnCancel: () => console.log('Cancel'),
     });
   }
@@ -48,10 +48,10 @@ export class ModulosComponent {
       nzTitle: 'Activar módulo',
       nzContent:
         '<span>¿Está seguro de que desea activar el módulo?</span><br><b>Al activar el módulo, este se volverá a mostrar en el sistema.</b>',
-      nzOkText: 'Yes',
+      nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => console.log('OK'),
-      nzCancelText: 'No',
+      nzCancelText: 'Cancelar',
       nzOnCancel: () => console.log('Cancel'),
     });
   }

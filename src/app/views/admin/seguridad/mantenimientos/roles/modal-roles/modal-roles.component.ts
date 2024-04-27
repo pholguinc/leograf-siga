@@ -29,10 +29,10 @@ export class ModalRolesComponent implements OnInit {
       nzTitle: 'Confirmar edición',
       nzContent:
         '<span>¿Está seguro de que desea editar el rol?</span><br><b>Todos los datos asociados, serán modifcados a la nueva descripción.</b>',
-      nzOkText: 'Yes',
+      nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => this.handleCancel(),
-      nzCancelText: 'No',
+      nzCancelText: 'Cancelar',
       nzOnCancel: () => console.log('Cancel'),
     });
   }
