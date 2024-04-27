@@ -34,8 +34,8 @@ export class ModalRolesComponent implements OnInit{
 
   showConfirm(): void {
     this.modal.confirm({
-      nzTitle: 'Activar módulo',
-      nzContent: '<span>¿Está seguro de que desea activar el módulo?</span><br><b>Al activar el módulo, este se volverá a mostrar en el sistema.</b>',
+      nzTitle: 'Confirmar edición',
+      nzContent: '<span>¿Está seguro de que desea editar el rol?</span><br><b>Todos los datos asociados, serán modifcados a la nueva descripción.</b>',
       nzOkText: 'Yes',
       nzOkType: 'primary',
       nzOnOk: () => this.handleCancel(),
