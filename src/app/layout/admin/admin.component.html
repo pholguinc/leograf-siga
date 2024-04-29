@@ -1,47 +1,75 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-            nzCollapsible
-            nzWidth="256px"
-            nzBreakpoint="md"
-            [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
+  <nz-sider
+    class="menu-sidebar"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+  >
     <div class="sidebar-logo">
       <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
         <h1>Ant Design Of Angular</h1>
       </a>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
-          </li>
-        </ul>
+    <ul
+      nz-menu
+      nzTheme="dark"
+      nzMode="inline"
+      [nzInlineCollapsed]="isCollapsed"
+    >
+      <li nz-menu-item nzTitle="Dashboard" nzIcon="dashboard">
+        <a style="display: flex; align-items: center">
+          <i nz-icon nzType="dashboard" style="margin-right: 8px"></i>
+          <span>Inicio</span>
+        </a>
       </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
+
+      <ng-container *ngIf="sidebarItems.length> 0; else noItems">
+<ng-container *ngFor="let item of sidebarItems">
+        <li
+          *ngIf="item.isSubMenu; else mainMenu"
+          nz-submenu
+          nzOpen
+          nzTitle="{{ item.title }}"
+          nzIcon="{{ item.icon }}"
+        >
+          <ul>
+            <li
+              nz-menu-item
+              *ngFor="let child of item.children"
+              [routerLink]="child.routerLink"
+            >
+              <a>{{ child.title }}</a>
+            </li>
+          </ul>
+        </li>
+        <ng-template #mainMenu>
+          <li nz-menu-item [routerLink]="item.routerLink">
+            <a>{{ item.title }}</a>
           </li>
-        </ul>
-      </li>
+        </ng-template>
+      </ng-container>
+      </ng-container>
+      <ng-template #noItems>
+          <p>No hay items disponibles.</p>
+
+      </ng-template>
+
+
+
     </ul>
   </nz-sider>
   <nz-layout>
     <nz-header>
       <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <span class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></span>
+          <span
+            class="trigger"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          ></span>
         </span>
       </div>
     </nz-header>
