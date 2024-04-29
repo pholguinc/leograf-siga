@@ -8,6 +8,7 @@ import { SedesComponent } from './mantenimientos/sedes/sedes.component';
 import { MenuComponent } from './mantenimientos/menu/menu.component';
 import { SubmenuComponent } from './mantenimientos/submenu/submenu.component';
 import { AsignacionRolesComponent } from './mantenimientos/asignacion-roles/asignacion-roles.component';
+import { AsignarPermisosComponent } from './mantenimientos/asignacion-roles/asignar-permisos/asignar-permisos.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'asignar-roles',
     component: AsignacionRolesComponent
+  },
+  {
+    path:'asignar-permisos',
+    component:AsignarPermisosComponent
   }
 
 ];

@@ -8,3 +8,16 @@
 .w-100{
   width: 100%!important;
 }
+.border-table{
+  border: 3px solid black;
+}
+
+
+.border-table th,
+.border-table td {
+  border-right: 3px solid #000;
+}
+
+.ant-table-thead > tr > th {
+  border-right: 3px solid #000!important;
+}

@@ -19,6 +19,7 @@ import { ModalMenuComponent } from './mantenimientos/menu/modal-menu/modal-menu.
 import { ModalUsuariosComponent } from './mantenimientos/usuarios/modal-usuarios/modal-usuarios.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalAsignarPermisosComponent } from './mantenimientos/usuarios/modal-asignar-permisos/modal-asignar-permisos.component';
+import { AsignarPermisosComponent } from './mantenimientos/asignacion-roles/asignar-permisos/asignar-permisos.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ModalAsignarPermisosComponent } from './mantenimientos/usuarios/modal-a
     MenuComponent,
     ModalMenuComponent,
     ModalUsuariosComponent,
-    ModalAsignarPermisosComponent
+    ModalAsignarPermisosComponent,
+    AsignarPermisosComponent
   ],
   imports: [
     CommonModule,
