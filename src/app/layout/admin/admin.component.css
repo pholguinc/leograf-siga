@@ -30,7 +30,7 @@
 
 .sidebar-logo {
   position: relative;
-  height: 64px;
+  height: 150px;
   padding-left: 24px;
   overflow: hidden;
   line-height: 64px;
@@ -38,10 +38,19 @@
   transition: all .3s;
 }
 
+
+
+.container-date {
+  color: #fff;
+  padding-left: 24px;
+}
+
 .sidebar-logo img {
+  margin-top: 20px;
+  padding: 3px;
   display: inline-block;
-  height: 32px;
-  width: 32px;
+  height: 80px;
+  width: 300px;
   vertical-align: middle;
 }
 

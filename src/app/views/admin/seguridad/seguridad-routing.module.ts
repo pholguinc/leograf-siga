@@ -16,38 +16,42 @@ const routes: Routes = [
     component: SeguridadComponent,
   },
   {
-    path: 'roles',
-    component: RolesComponent,
+    path: 'mantenimientos',
+    children: [
+      {
+        path: 'roles',
+        component: RolesComponent,
+      },
+      {
+        path: 'usuarios',
+        component: UsuariosComponent,
+      },
+      {
+        path: 'modulos',
+        component: ModulosComponent,
+      },
+      {
+        path: 'sedes',
+        component: SedesComponent,
+      },
+      {
+        path: 'menu',
+        component: MenuComponent,
+      },
+      {
+        path: 'submenu',
+        component: SubmenuComponent,
+      },
+      {
+        path: 'asignar-roles',
+        component: AsignacionRolesComponent,
+      },
+      {
+        path: 'asignar-permisos',
+        component: AsignarPermisosComponent,
+      },
+    ],
   },
-  {
-    path: 'usuarios',
-    component: UsuariosComponent
-  },
-  {
-    path: 'modulos',
-    component: ModulosComponent
-  },
-  {
-    path: 'sedes',
-    component: SedesComponent
-  },
-  {
-    path: 'menu',
-    component: MenuComponent
-  },
-  {
-    path: 'submenu',
-    component: SubmenuComponent
-  },
-  {
-    path: 'asignar-roles',
-    component: AsignacionRolesComponent
-  },
-  {
-    path:'asignar-permisos',
-    component:AsignarPermisosComponent
-  }
-
 ];
 
 @NgModule({

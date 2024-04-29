@@ -16,7 +16,10 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     const currentUrl = this.router.url;
-    if (currentUrl.startsWith('/admin/seguridad/')) {
+    if (
+      currentUrl === '/admin/seguridad' ||
+      currentUrl.startsWith('/admin/seguridad/mantenimientos')
+    ) {
       this.sidebarItems = this.sidebarService.sidebarItems;
     } else {
       this.sidebarItems = [];

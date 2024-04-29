@@ -2,16 +2,18 @@
   <nz-sider
     class="menu-sidebar"
     nzCollapsible
-    nzWidth="256px"
+    nzWidth="356px"
     nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null"
   >
     <div class="sidebar-logo">
       <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
-        <h1>Ant Design Of Angular</h1>
+        <img src="../../../assets/images/logo-leograf.png" alt="logo" />
       </a>
+    </div>
+    <div class="container-date">
+      <h6 class="font-weight-bold">último ingreso: 13/04/2024 - 17:20pm</h6>
     </div>
     <ul
       nz-menu
@@ -26,39 +28,35 @@
         </a>
       </li>
 
-      <ng-container *ngIf="sidebarItems.length> 0; else noItems">
-<ng-container *ngFor="let item of sidebarItems">
-        <li
-          *ngIf="item.isSubMenu; else mainMenu"
-          nz-submenu
-          nzOpen
-          nzTitle="{{ item.title }}"
-          nzIcon="{{ item.icon }}"
-        >
-          <ul>
-            <li
-              nz-menu-item
-              *ngFor="let child of item.children"
-              [routerLink]="child.routerLink"
-            >
-              <a>{{ child.title }}</a>
-            </li>
-          </ul>
-        </li>
-        <ng-template #mainMenu>
-          <li nz-menu-item [routerLink]="item.routerLink">
-            <a>{{ item.title }}</a>
+      <ng-container *ngIf="sidebarItems.length > 0; else noItems">
+        <ng-container *ngFor="let item of sidebarItems">
+          <li
+            *ngIf="item.isSubMenu; else mainMenu"
+            nz-submenu
+            nzOpen
+            nzTitle="{{ item.title }}"
+            nzIcon="{{ item.icon }}"
+          >
+            <ul>
+              <li
+                nz-menu-item
+                *ngFor="let child of item.children"
+                [routerLink]="child.routerLink"
+              >
+                <a>{{ child.title }}</a>
+              </li>
+            </ul>
           </li>
-        </ng-template>
-      </ng-container>
+          <ng-template #mainMenu>
+            <li nz-menu-item [routerLink]="item.routerLink">
+              <a>{{ item.title }}</a>
+            </li>
+          </ng-template>
+        </ng-container>
       </ng-container>
       <ng-template #noItems>
-          <p>No hay items disponibles.</p>
-
+        <p>No hay items disponibles.</p>
       </ng-template>
-
-
-
     </ul>
   </nz-sider>
   <nz-layout>
