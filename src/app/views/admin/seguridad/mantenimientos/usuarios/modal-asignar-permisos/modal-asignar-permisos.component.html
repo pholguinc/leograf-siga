@@ -1,0 +1,189 @@
+<nz-modal
+  [(nzVisible)]="isVisibleAsignarPermisos"
+  nzWidth="50%"
+  [nzTitle]="modalTitle"
+  [nzContent]="modalBody"
+  [nzFooter]="modalFooter"
+  (nzOnCancel)="handleCancel()"
+  [nzMaskClosable]="false"
+  [nzKeyboard]="false"
+>
+  <ng-template class="cabezera" #modalTitle>
+    <span>{{ titleModal }}</span>
+  </ng-template>
+
+  <ng-template #modalBody>
+    <div class="p-3">
+      <div class="bordered-div">
+        <div class="p-3">
+          <div nz-row class="mb-3" [nzGutter]="24" nzAlign="middle">
+            <div nz-col nzXs="24" nzMd="12" nzLg="12">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="24">Tipo de Documento</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <nz-select
+                    nzShowSearch
+                    nzAllowClear
+                    nzPlaceHolder="Todos"
+                    nzDisabled="true"
+                  >
+                    <ng-container>
+                      <nz-option nzLabel="data.Text" [nzValue]="0"></nz-option>
+                    </ng-container>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzXs="24" nzMd="12" nzLg="12">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="24">N° de Documento</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input type="text" nz-input disabled value="72154867" />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzXs="24" nzMd="12" nzLg="12">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="24">Nombres</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input type="text" nz-input disabled="" value="Julio Cesar" />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+            <div nz-col nzXs="24" nzMd="12" nzLg="12">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="24">Apellidos</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input
+                    type="text"
+                    nz-input
+                    disabled=""
+                    value="Padilla Olivera"
+                  />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-5">
+        <div class="bordered-permisos-div">
+          <div class="p-3">
+            <div nz-row class="mb-3" [nzGutter]="24" nzAlign="middle">
+              <div nz-col nzXs="24" nzMd="12" nzLg="12">
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="24">Rol</nz-form-label>
+                  <nz-form-control [nzSpan]="24">
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Todos">
+                      <ng-container>
+                        <nz-option
+                          nzLabel="Asistente de Producción"
+                          [nzValue]="0"
+                        ></nz-option>
+                      </ng-container>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col nzXs="24" nzMd="12" nzLg="12">
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="24">Sede</nz-form-label>
+                  <nz-form-control [nzSpan]="24">
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Todos">
+                      <ng-container>
+                        <nz-option
+                          nzLabel="Los Olivos"
+                          [nzValue]="0"
+                        ></nz-option>
+                      </ng-container>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col nzXs="24" nzMd="24" nzLg="24">
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="24"
+                    >Listado de asignaciones</nz-form-label
+                  >
+                  <nz-form-control [nzSpan]="24">
+                    <nz-table #nzTable nzTableLayout="fixed">
+                      <thead>
+                        <tr>
+                          <th>N°</th>
+                          <th>Rol</th>
+                          <th>Sede</th>
+                          <th>Estado</th>
+                          <th>Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Asistente de producción</td>
+                          <td>Los Olivos</td>
+                          <td>Activo</td>
+                          <td class="text-center">
+                            <button
+                              nz-button
+                              nzType="default"
+                              nzShape="circle"
+                              nz-tooltip
+                              nzTooltipTitle="Editar"
+                            >
+                              <i class="fas fa-edit"></i>
+                            </button>
+                            &nbsp;
+                            <button
+                              nz-button
+                              nzType="default"
+                              nzShape="circle"
+                              nz-tooltip
+                              nzTooltipTitle="Desactivar"
+                              (click)="showDesactivar()"
+                            >
+                              <i class="fas fa-close"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Administrador</td>
+                          <td>Comas</td>
+                          <td>Inactivo</td>
+                          <td class="text-center">
+
+                            <button
+                              nz-button
+                              nzType="default"
+                              nzShape="circle"
+                              nz-tooltip
+                              nzTooltipTitle="Activar"
+                              (click)="showActivar()"
+                            >
+                              <i class="fas fa-check"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </nz-table>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #modalFooter>
+    <div style="text-align: center">
+      <button nz-button nzType="primary" (click)="showConfirm()">
+        Guardar
+      </button>
+      <button nz-button nzType="default" (click)="handleCancel()">
+        Cancelar
+      </button>
+    </div>
+  </ng-template>
+</nz-modal>

@@ -16,6 +16,9 @@ import { ModalSubmenuComponent } from './mantenimientos/submenu/modal-submenu/mo
 import { AsignacionRolesComponent } from './mantenimientos/asignacion-roles/asignacion-roles.component';
 import { MenuComponent } from './mantenimientos/menu/menu.component';
 import { ModalMenuComponent } from './mantenimientos/menu/modal-menu/modal-menu.component';
+import { ModalUsuariosComponent } from './mantenimientos/usuarios/modal-usuarios/modal-usuarios.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalAsignarPermisosComponent } from './mantenimientos/usuarios/modal-asignar-permisos/modal-asignar-permisos.component';
 
 
 @NgModule({
@@ -32,12 +35,16 @@ import { ModalMenuComponent } from './mantenimientos/menu/modal-menu/modal-menu.
     ModalSubmenuComponent,
     AsignacionRolesComponent,
     MenuComponent,
-    ModalMenuComponent
+    ModalMenuComponent,
+    ModalUsuariosComponent,
+    ModalAsignarPermisosComponent
   ],
   imports: [
     CommonModule,
     SeguridadRoutingModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SeguridadModule { }
