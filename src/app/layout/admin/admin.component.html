@@ -12,8 +12,23 @@
         <img src="../../../assets/images/logo-leograf.png" alt="logo" />
       </a>
     </div>
-    <div class="container-date">
-      <h6 class="font-weight-bold">último ingreso: 13/04/2024 - 17:20pm</h6>
+    <div class="container-date" *ngIf="shouldShowContainerDate()">
+      <h6 class="font-weight-bold">Último ingreso: 13/04/2024 - 17:20pm</h6>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="container-icon text-center text-dark">
+            <i id="icon" class="fas fa-user fa-3x"></i>
+          </div>
+        </div>
+        <div class="col-md-9">
+            <h5 class="mt-2">Bienvenido(a):</h5>
+            <p>Sebastián Olivera Leyva</p>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <h5 class="text-user"><b>Rol: </b><span>Administrador</span></h5>
+        <h5 class="text-user"><b>Sede: </b><span>Comas</span></h5>
+      </div>
     </div>
     <ul
       nz-menu

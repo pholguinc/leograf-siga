@@ -20,6 +20,7 @@ import { ModalUsuariosComponent } from './mantenimientos/usuarios/modal-usuarios
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalAsignarPermisosComponent } from './mantenimientos/usuarios/modal-asignar-permisos/modal-asignar-permisos.component';
 import { AsignarPermisosComponent } from './mantenimientos/asignacion-roles/asignar-permisos/asignar-permisos.component';
+import {  RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { AsignarPermisosComponent } from './mantenimientos/asignacion-roles/asig
     SeguridadRoutingModule,
     NgZorroAntdModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class SeguridadModule { }

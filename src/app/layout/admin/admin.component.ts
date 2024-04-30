@@ -9,10 +9,11 @@ import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 })
 export class AdminComponent implements OnInit {
   isCollapsed = false;
+  showIconsOnly: boolean = true;
 
   sidebarItems!: any[];
 
-  constructor(private sidebarService: SidebarService, private router:Router) {}
+  constructor(private sidebarService: SidebarService, private router: Router) {}
 
   ngOnInit(): void {
     const currentUrl = this.router.url;
@@ -24,6 +25,9 @@ export class AdminComponent implements OnInit {
     } else {
       this.sidebarItems = [];
     }
+  }
 
+  shouldShowContainerDate(): boolean {
+    return !this.isCollapsed;
   }
 }
