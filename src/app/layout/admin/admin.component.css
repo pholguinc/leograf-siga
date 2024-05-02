@@ -5,8 +5,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+a{
+  text-decoration: none;
+}
+
+.content-login{
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 400;
+}
+
 .app-layout {
   height: 120vh;
+}
+.ant-layout-header{
+  height: 94px!important;
+  background: #F8D426!important;
+}
+
+.app-header{
+  background: #F8D426!important;
+  color: #fff;
+  height: 94px!important;
 }
 
 .menu-sidebar {
@@ -48,7 +68,6 @@
   box-sizing: border-box;
 
 }
-
 
 
 .container-date {

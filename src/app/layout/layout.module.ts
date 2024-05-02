@@ -13,6 +13,6 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
   declarations: [LoginAuthLayoutComponent, AdminComponent, ModulosComponent, RegistroLayoutComponent, HomeLayoutComponent],
-  imports: [CommonModule, NgZorroAntdModule, RouterModule, NzIconModule,],
+  imports: [CommonModule, NgZorroAntdModule, RouterModule, NzIconModule],
 })
 export class LayoutModule {}

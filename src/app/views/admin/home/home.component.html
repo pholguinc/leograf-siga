@@ -1,87 +1,102 @@
 <header class="header">
-
   <div class="logo">
     <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
     <ul>
       <li class="sub-menu">Bienvenido(a)</li>
-      <li class="sub-menu">{{nombreUsuario}}</li>
+      <li class="sub-menu">{{ nombreUsuario }}</li>
     </ul>
   </div>
 
   <nav class="menu-sesion">
     <ul>
-      <li class="sub-menu">Ultimo ingreso: {{fechaUltimoIngreso}}</li>
+      <li class="sub-menu">Ultimo ingreso: {{ fechaUltimoIngreso }}</li>
       <li class="sub-menu sesion"><a href="/maestro">Cerrar sesión</a></li>
     </ul>
   </nav>
-
 </header>
 
 <nz-content>
-
-  <div style="text-align: center;">
-    <img src="../../../assets/images/logo-leograf.png" alt="">
+  <div style="text-align: center">
+    <img src="../../../assets/images/logo-leograf.png" alt="" />
   </div>
 
-  <div style="width: max;">
-
-    <div nz-row nzJustify="center" style="text-align: center;" [nzGutter]="24">
+  <div style="width: max">
+    <div
+      nz-row
+      nzJustify="center"
+      style="text-align: center"
+      [nzGutter]="24"
+      class="p-4"
+    >
       <div nz-col>
         <nz-form-item>
-          <a href="/admin/mantenimientos/roles">
-            <div class="circulo">
-              <span nz-icon nzType="lock" nzTheme="outline"></span>
-            </div>
+          <a [routerLink]="['/admin/seguridad']">
+
+            <img width="320" height="320" src="../../../../assets/images/Seguridad.jpg" alt="..." class="rounded-circle">
           </a>
         </nz-form-item>
-        <p>Seguridad</p>
+        <a [routerLink]="['/admin/seguridad']"><h3 class="mt-3 mb-3">Seguridad</h3></a>
       </div>
 
       <div nz-col>
         <nz-form-item>
           <a href="/maestro">
-            <div class="circulo">
-              <span nz-icon nzType="menu" nzTheme="outline"></span>
-            </div>
+            <img
+              width="320"
+              height="320"
+              src="../../../../assets/images/Tablas-Maestras.jpg"
+              alt=""
+              class="rounded-circle"
+            >
           </a>
         </nz-form-item>
-        <p>Tablas maestras</p>
+        <h3 class="mt-3 mb-3">Tablas Maestras</h3>
       </div>
 
       <div nz-col>
         <nz-form-item>
           <a href="/maestro">
-            <div class="circulo">
-              <span nz-icon nzType="inbox" nzTheme="outline"></span>
-            </div>
+            <img
+              width="320"
+              height="320"
+              src="../../../../assets/images/Inventario.jpg"
+              alt=""
+              class="rounded-circle"
+            >
           </a>
         </nz-form-item>
-        <p>Inventario</p>
+        <h3 class="mt-3 mb-3">Inventario</h3>
       </div>
 
       <div nz-col>
         <nz-form-item>
           <a href="/maestro">
-            <div class="circulo">
-              <span nz-icon nzType="border" nzTheme="outline"></span>
-            </div>
+            <img
+              width="320"
+              height="320"
+              src="../../../../assets/images/Produccion.jpg"
+              alt=""
+              class="rounded-circle"
+            >
           </a>
         </nz-form-item>
-        <p>Producción</p>
+        <h3 class="mt-3 mb-3">Producción</h3>
       </div>
 
       <div nz-col>
         <nz-form-item>
           <a href="/maestro">
-            <div class="circulo">
-              <span nz-icon nzType="unordered-list" nzTheme="outline"></span>
-            </div>
+            <img
+              width="320"
+              height="320"
+              src="../../../../assets/images/Facturacion.jpg"
+              alt=""
+              class="rounded-circle"
+            >
           </a>
         </nz-form-item>
-        <p>Facturación</p>
+        <h3 class="mt-3 mb-3">Facturación</h3>
       </div>
     </div>
-
   </div>
-
 </nz-content>

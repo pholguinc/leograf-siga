@@ -4,16 +4,18 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { NgZorroAntdModule } from 'src/app/ng-zorro.module';
+import { RouterLink } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    RouterLink
   ]
 })
 export class HomeModule { }

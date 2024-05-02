@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  Router,
+  NavigationEnd,
+  NavigationStart,
+} from '@angular/router';
+import { filter } from 'rxjs';
 import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 
 @Component({
@@ -10,12 +16,27 @@ import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 export class AdminComponent implements OnInit {
   isCollapsed = false;
   showIconsOnly: boolean = true;
+  routeNameStorage: string = '';
 
   sidebarItems!: any[];
 
-  constructor(private sidebarService: SidebarService, private router: Router) {}
+  shouldHideSidebar: boolean = false;
+
+  constructor(
+    private sidebarService: SidebarService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.updateRouteName();
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.updateRouteName();
+      }
+    });
+
     const currentUrl = this.router.url;
     if (
       currentUrl === '/admin/seguridad' ||
@@ -27,7 +48,22 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  updateRouteName(): void {
+    const currentUrl = this.router.url;
+    const segments = currentUrl.split('/');
+    let routeName = segments[segments.length - 1];
+    routeName = routeName.charAt(0).toUpperCase() + routeName.slice(1);
+
+    console.log('Último parámetro de la ruta:', routeName);
+    localStorage.setItem('routeName', routeName);
+    this.routeNameStorage = routeName;
+  }
+
   shouldShowContainerDate(): boolean {
     return !this.isCollapsed;
+  }
+
+  change(value: boolean): void {
+    console.log(value);
   }
 }

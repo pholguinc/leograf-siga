@@ -4,14 +4,18 @@ import { LoginAuthLayoutComponent } from './layout/auth/login/login-auth-layout.
 import { AdminComponent } from './layout/admin/admin.component';
 import { RegistroLayoutComponent } from './layout/auth/registro/registro-layout-component.component';
 import { HomeLayoutComponent } from './layout/home/home-layout.component';
+import { HomeComponent } from './views/admin/home/home.component';
 
 
 const routes: Routes = [
+
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/admin',
+    redirectTo: '/home',
   },
+
+
 
   {
     path: 'home',
@@ -19,9 +23,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren:() => import('./views/admin/home/home.module').then((m)=>m.HomeModule)
-      }
-    ]
+        loadChildren: () =>
+          import('./views/admin/home/home.module').then((m) => m.HomeModule),
+      },
+    ],
   },
 
   {
@@ -81,57 +86,30 @@ const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'admin',
-  //   component: AdminComponent,
-  //   children: [
-  //     {
-  //       path: '',
-  //       loadChildren: () =>
-  //         import('./views/admin/home/home.module').then((m) => m.HomeModule),
-  //     },
-  //     {
-  //       path: 'mantenimientos',
-  //       children: [
-  //         {
-  //           path: 'roles',
-  //           loadChildren: () =>
-  //             import('./views/admin/mantenimientos/roles/roles.module').then(
-  //               (m) => m.RolesModule
-  //             ),
-  //         },
-  //         {
-  //           path: 'modulos',
-  //           loadChildren: () =>
-  //             import(
-  //               './views/admin/mantenimientos/modulos/modulos.module'
-  //             ).then((m) => m.ModulosModule),
-  //         },
-  //         {
-  //           path: 'usuarios',
-  //           loadChildren: () =>
-  //             import(
-  //               './views/admin/mantenimientos/usuarios/usuarios.module'
-  //             ).then((m) => m.UsuariosModule),
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
+
+
+
 
   //Módulos
   {
     path: 'admin',
     component: AdminComponent,
-    children:[
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+
       {
         path: 'seguridad',
-        loadChildren:()=> import('./views/admin/seguridad/seguridad.module').then((m)=>m.SeguridadModule),
-
-      }
-    ]
-  }
-
+        loadChildren: () =>
+          import('./views/admin/seguridad/seguridad.module').then(
+            (m) => m.SeguridadModule
+          ),
+      },
+    ],
+  },
 ];
 
 @NgModule({

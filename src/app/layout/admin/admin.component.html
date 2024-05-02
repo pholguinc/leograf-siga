@@ -21,8 +21,8 @@
           </div>
         </div>
         <div class="col-md-9">
-            <h5 class="mt-2">Bienvenido(a):</h5>
-            <p>Sebastián Olivera Leyva</p>
+          <h5 class="mt-2">Bienvenido(a):</h5>
+          <p>Sebastián Olivera Leyva</p>
         </div>
       </div>
       <div class="row mt-2">
@@ -76,16 +76,29 @@
   </nz-sider>
   <nz-layout>
     <nz-header>
-      <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <span
-            class="trigger"
-            nz-icon
-            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-          ></span>
-        </span>
-      </div>
-    </nz-header>
+  <div class="app-header" style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="header-trigger" (click)="isCollapsed = !isCollapsed" style="display: flex; align-items: center;">
+      <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" style="margin-right: 8px;"></span>
+      <h1 style="margin: 0;">{{ routeNameStorage }}</h1>
+    </div>
+
+    <div style="display: flex; align-items: center; margin-right: 20px;">
+      <a nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomRight" class="content-login">
+        <span nz-icon nzType="user" class="text-dark"></span>
+        Sebastián Olivera Leyva
+        <span nz-icon nzType="down" class="mt-2 text-dark"></span>
+      </a>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item>Cambiar de módulo</li>
+          <li nz-menu-item>Cambiar Contraseña</li>
+          <li nz-menu-item>Cerrar Sesión</li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+  </div>
+</nz-header>
+
     <nz-content>
       <div class="inner-content">
         <router-outlet></router-outlet>
