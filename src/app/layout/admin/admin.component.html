@@ -13,7 +13,7 @@
       </a>
     </div>
     <div class="container-date" *ngIf="shouldShowContainerDate()">
-      <h6 class="font-weight-bold">Último ingreso: 13/04/2024 - 17:20pm</h6>
+      <h6 class="font-weight-bold">Último ingreso: {{ fechaUltimoRegistro }}</h6>
       <div class="row">
         <div class="col-md-3">
           <div class="container-icon text-center text-dark">
@@ -22,12 +22,12 @@
         </div>
         <div class="col-md-9">
           <h5 class="mt-2">Bienvenido(a):</h5>
-          <p>Sebastián Olivera Leyva</p>
+          <p>{{ usuario }}</p>
         </div>
       </div>
       <div class="row mt-2">
-        <h5 class="text-user"><b>Rol: </b><span>Administrador</span></h5>
-        <h5 class="text-user"><b>Sede: </b><span>Comas</span></h5>
+        <h5 class="text-user"><b>Rol: </b><span>{{ rolUsuario }}</span></h5>
+        <h5 class="text-user"><b>Sede: </b><span>{{ sedeUsuario }}</span></h5>
       </div>
     </div>
     <ul
@@ -37,7 +37,7 @@
       [nzInlineCollapsed]="isCollapsed"
     >
       <li nz-menu-item nzTitle="Dashboard" nzIcon="dashboard">
-        <a style="display: flex; align-items: center">
+        <a style="display: flex; align-items: center" href="admin/seguridad">
           <i nz-icon nzType="dashboard" style="margin-right: 8px"></i>
           <span>Inicio</span>
         </a>
@@ -85,14 +85,14 @@
     <div style="display: flex; align-items: center; margin-right: 20px;">
       <a nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomRight" class="content-login">
         <span nz-icon nzType="user" class="text-dark"></span>
-        Sebastián Olivera Leyva
+        {{ usuario }}
         <span nz-icon nzType="down" class="mt-2 text-dark"></span>
       </a>
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
-          <li nz-menu-item>Cambiar de módulo</li>
+          <li nz-menu-item (click)="regresarModulos()">Cambiar de módulo</li>
           <li nz-menu-item>Cambiar Contraseña</li>
-          <li nz-menu-item>Cerrar Sesión</li>
+          <li nz-menu-item (click)="cerrarSeccion()">Cerrar Sesión</li>
         </ul>
       </nz-dropdown-menu>
     </div>

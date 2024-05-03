@@ -14,9 +14,15 @@ import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent implements OnInit {
+
   isCollapsed = false;
   showIconsOnly: boolean = true;
   routeNameStorage: string = '';
+
+  fechaUltimoRegistro: string = "13/04/2024 - 17:20pm";
+  usuario: string = "Sebastián Olivera Leyva";
+  rolUsuario: string = "Administrador";
+  sedeUsuario: String = "Comas";
 
   sidebarItems!: any[];
 
@@ -57,6 +63,18 @@ export class AdminComponent implements OnInit {
     console.log('Último parámetro de la ruta:', routeName);
     localStorage.setItem('routeName', routeName);
     this.routeNameStorage = routeName;
+  }
+
+  cerrarSeccion(){
+    this.router.navigate([
+      'auth/login'
+    ])
+  }
+
+  regresarModulos(){
+    this.router.navigate([
+      'home',
+    ])
   }
 
   shouldShowContainerDate(): boolean {
