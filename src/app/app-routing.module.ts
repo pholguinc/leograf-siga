@@ -108,6 +108,13 @@ const routes: Routes = [
             (m) => m.SeguridadModule
           ),
       },
+      {
+        path: 'tablas-maestras',
+        loadChildren: () =>
+          import('./views/admin/tablas-maestras/tablas-maestras.module').then(
+            (m) => m.TablasMaestrasModule
+          )
+      }
     ],
   },
 ];
