@@ -25,12 +25,13 @@ nz-avatar {
 
 .logo{
   display: flex;
+  width: 40%;
 }
 
 .sub-menu{
   color: #f2f2f2;
   list-style: none;
-  font-size: 18px;
+  font-size: 13px;
   margin-left: 15px;
   margin-right: 5px;
 }
