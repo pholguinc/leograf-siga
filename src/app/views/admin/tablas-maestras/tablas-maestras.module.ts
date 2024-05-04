@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgZorroAntdModule } from 'src/app/ng-zorro.module';
 
 import { TablasMaestrasRoutingModule } from './tablas-maestras-routing.module';
 import { TablasMaestrasComponent } from './tablas-maestras.component';
@@ -7,6 +8,7 @@ import { ArticulosComponent } from './archivos-maestros/articulos/articulos.comp
 import { ClientesProveedoresComponent } from './archivos-maestros/clientes-proveedores/clientes-proveedores.component';
 import { UnidadMedidasComponent } from './archivos-maestros/unidad-medidas/unidad-medidas.component';
 import { MaquinasComponent } from './archivos-maestros/maquinas/maquinas.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,11 +17,13 @@ import { MaquinasComponent } from './archivos-maestros/maquinas/maquinas.compone
     ArticulosComponent,
     ClientesProveedoresComponent,
     UnidadMedidasComponent,
-    MaquinasComponent
+    MaquinasComponent,
   ],
   imports: [
     CommonModule,
-    TablasMaestrasRoutingModule
+    TablasMaestrasRoutingModule,
+    NgZorroAntdModule,
+    RouterModule,
   ]
 })
 export class TablasMaestrasModule { }
