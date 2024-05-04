@@ -5,6 +5,7 @@ import { ArticulosComponent } from './archivos-maestros/articulos/articulos.comp
 import { ClientesProveedoresComponent } from './archivos-maestros/clientes-proveedores/clientes-proveedores.component';
 import { MaquinasComponent } from './archivos-maestros/maquinas/maquinas.component';
 import { UnidadMedidasComponent } from './archivos-maestros/unidad-medidas/unidad-medidas.component';
+import { DetallesArticulosComponent } from './archivos-maestros/articulos/detalles-articulos/detalles-articulos.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'articulos',
         component: ArticulosComponent,
+      },
+      {
+        path: 'articulos/detalles-articulos',
+        component: DetallesArticulosComponent,
       },
       {
         path: 'clientes-proveedores',

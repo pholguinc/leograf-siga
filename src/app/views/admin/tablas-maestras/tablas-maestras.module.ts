@@ -8,7 +8,10 @@ import { ArticulosComponent } from './archivos-maestros/articulos/articulos.comp
 import { ClientesProveedoresComponent } from './archivos-maestros/clientes-proveedores/clientes-proveedores.component';
 import { UnidadMedidasComponent } from './archivos-maestros/unidad-medidas/unidad-medidas.component';
 import { MaquinasComponent } from './archivos-maestros/maquinas/maquinas.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { DetallesArticulosComponent } from './archivos-maestros/articulos/detalles-articulos/detalles-articulos.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 
 @NgModule({
@@ -18,12 +21,17 @@ import { RouterModule } from '@angular/router';
     ClientesProveedoresComponent,
     UnidadMedidasComponent,
     MaquinasComponent,
+    DetallesArticulosComponent,
   ],
   imports: [
     CommonModule,
     TablasMaestrasRoutingModule,
     NgZorroAntdModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NzFormModule,
+
   ]
 })
 export class TablasMaestrasModule { }

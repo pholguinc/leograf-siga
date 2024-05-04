@@ -1,0 +1,215 @@
+<div style="text-align: end;">
+  <nz-breadcrumb>
+    <nz-breadcrumb-item>Admin</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a>Mantenimiento</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>Seguridad</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</div>
+
+<br>
+
+<div class="p-3" >
+  <div nz-row [nzGutter]="{ xs: 24, sm: 24, md: 12, lg: 12 }">
+    <div nz-col class="gutter-row" [nzSpan]="24">
+      <div class="bordered-div">
+        <div class="p-2">
+
+          <div nz-row [nzGutter]="24">
+            <div nz-col nzLg="12">
+              <nz-form-item>
+                <nz-form-label nzRequired>Codigo de articulo</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input
+                    nz-input
+                    type="text"
+                    placeholder="Codigo de articulo"
+                  />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div nz-col nzLg="12">
+              <nz-form-item>
+                <nz-form-label nzRequired>Articulo</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input
+                    nz-input
+                    type="text"
+                    placeholder="Articulo"
+                  />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+          </div>
+
+          <div nz-row [nzGutter]="24">
+            <div nz-col nzLg="24">
+              <nz-form-item>
+                <nz-form-label>Detalles del articulo</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input
+                    nz-input
+                    type="text"
+                    placeholder="Detalles del articulo"
+                  />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-2">
+  <div class="bordered-div-formula">
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col d-grid gap-2">
+          <button type="button" class="btn btn-primary" (click)="fnCambioVista(1)">Insumos</button>
+        </div>
+        <div class="col d-grid gap-2">
+          <button type="button" class="btn btn-primary" (click)="fnCambioVista(2)">Requerimientos</button>
+        </div>
+        <div class="col d-grid gap-2">
+          <button type="button" class="btn btn-primary" (click)="fnCambioVista(3)">Procesos</button>
+        </div>
+        <div class="col d-grid gap-2">
+          <button type="button" class="btn btn-primary" (click)="fnCambioVista(4)">Acabados</button>
+        </div>
+        <div class="col d-grid gap-2">
+          <button type="button" class="btn btn-primary" (click)="fnCambioVista(5)">Orden de Producción</button>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <ng-container *ngIf="isVisibleTabla1" class="mb-3">
+
+          <div nz-row class="mt-3 mb-3">
+            <div class="col-lg-12 d-flex justify-content-end">
+              <button nz-button nzType="primary">
+                Nuevo Registro
+              </button>
+            </div>
+          </div>
+
+          <nz-table>
+            <thead >
+              <tr>
+                <th nzWidth="25%">Código</th>
+
+                <th *ngIf="isVisibleInsumos" nzWidth="25%">Insumo</th>
+                <th *ngIf="isVisibleRequerimiento" nzWidth="25%">Requerimiento </th>
+                <th *ngIf="isVisibleProceso" nzWidth="25%">Proceso</th>
+                <th *ngIf="isVisibleAcabado" nzWidth="25%">Acabado</th>
+
+                <th *ngIf="isVisibleArea1" nzWidth="25%">Cantidad</th>
+                <th *ngIf="isVisibleArea2" nzWidth="25%">Orden</th>
+
+                <th style="text-align: center" nzWidth="25%">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <td>001</td>
+
+              <td *ngIf="isVisibleInsumos">Insumo 1</td>
+              <td *ngIf="isVisibleRequerimiento">Requerimientio 1</td>
+              <td *ngIf="isVisibleProceso">Proceso 1</td>
+              <td *ngIf="isVisibleAcabado">Acabado 1</td>
+
+              <td *ngIf="isVisibleArea1">cantidad 1</td>
+              <td *ngIf="isVisibleArea2">Orden 1</td>
+
+              <td style="text-align: center">
+                <button
+                  nz-button
+                  nzType="default"
+                  nzShape="circle"
+                  nz-tooltip
+                  nzTooltipTitle="Titulo 1"
+                >
+                A
+                </button>
+              </td>
+
+            </tbody>
+          </nz-table>
+          <div class="paginacion">
+            <nz-pagination [nzPageIndex]="3" [nzTotal]="500" nzShowSizeChanger [nzPageSize]="10"></nz-pagination>
+            <span>Cantidad de registros {{index}} - {{size}}</span>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="isVisibleTabla2">
+
+          <div nz-row class="mt-3 mb-3">
+            <div class="col-lg-12 d-flex justify-content-end">
+              <button nz-button nzType="primary">
+                Cargar Lista
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="row">
+              <div class="col">
+                <nz-table>
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th>Detalle</th>
+                      <th>Tipo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>001</td>
+                      <td>Detalle 1</td>
+                      <td>Tipo 1</td>
+                    </tr>
+                  </tbody>
+                </nz-table>
+              </div>
+
+              <div class="col">
+                <nz-table>
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th>Detalle</th>
+                      <th>Tipo</th>
+                      <th>Orden</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>001</td>
+                      <td>Detalle 1</td>
+                      <td>Tipo 1</td>
+                      <td>Orden 1</td>
+                    </tr>
+                  </tbody>
+                </nz-table>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="paginacion">
+            <nz-pagination [nzPageIndex]="3" [nzTotal]="500" nzShowSizeChanger [nzPageSize]="10"></nz-pagination>
+            <span>Cantidad de registros {{index}} - {{size}}</span>
+          </div>
+
+        </ng-container>
+
+      </div>
+    </div>
+  </div>
+</div>
+

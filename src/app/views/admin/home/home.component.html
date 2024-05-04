@@ -55,7 +55,7 @@
 
       <div nz-col>
         <nz-form-item>
-          <a href="/maestro">
+          <a [routerLink]="['/admin/tablas-maestras']">
             <img
               width="320"
               height="320"
@@ -65,7 +65,9 @@
             />
           </a>
         </nz-form-item>
-        <h3 class="mt-3 mb-3">Tablas Maestras</h3>
+        <a [routerLink]="['/admin/tablas-maestras']">
+          <h3 class="mt-3 mb-3">Tablas Maestras</h3>
+        </a>
       </div>
 
       <div nz-col>
