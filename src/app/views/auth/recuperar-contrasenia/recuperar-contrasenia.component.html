@@ -1,9 +1,8 @@
 <div>
-  <h4
-    class="text-white bg-dark p-3 text-center font-weight-bold header-card-login"
-  >
+  <h4 class="text-white bg-dark p-3 text-center font-weight-bold header-card-login">
     RECUPERAR CONTRASEÑA
   </h4>
+
   <div class="mt-4">
     <p>Por favor, ingresa tu tipo, número de documento y correo electrónico.</p>
     <p>
@@ -23,10 +22,9 @@
               class="border border-dark"
             >
               <ng-container>
-                <nz-option
-                  nzLabel="Texto 1"
-                  [nzValue]="0"
-                ></nz-option>
+                <nz-option nzLabel="DNI" nzValue="1"></nz-option>
+                <nz-option nzLabel="RUC" nzValue="2"></nz-option>
+                <nz-option nzLabel="Carnet de Extranjeria" nzValue="3"></nz-option>
               </ng-container>
             </nz-select>
         </nz-form-control>
@@ -44,7 +42,7 @@
         </nz-form-control>
       </nz-form-item>
       <div class="text-center">
-        <a href="#" class="btn btn-primary d-inline-block mb-2">Enviar</a>
+        <a href="auth/recuperar-contrasenia-aviso" class="btn btn-primary d-inline-block mb-2">Enviar</a>
       </div>
     </form>
   </div>

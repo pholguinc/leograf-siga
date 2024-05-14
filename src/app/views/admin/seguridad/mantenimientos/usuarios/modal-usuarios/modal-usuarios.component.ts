@@ -40,7 +40,7 @@ export class ModalUsuariosComponent implements OnInit {
         '<span>¿Está seguro de que desea crear al nuevo usuario?</span><br><b>Al aceptar, este usuario recibirá un correo para completar su registro en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
-      nzOnOk: () => console.log('OK'),
+      nzOnOk: () => this.handleCancel(),
       nzCancelText: 'Cancelar',
       nzOnCancel: () => console.log('Cancel'),
       nzWidth: '600px',

@@ -4,15 +4,14 @@
     <nz-space>
       <nz-breadcrumb>
         <nz-breadcrumb-item>
-          <span nz-icon nzType="home"></span>
+          <span>Seguridad</span>
         </nz-breadcrumb-item>
         <nz-breadcrumb-item>
           <a>
-            <span nz-icon nzType="user"></span>
-            <span>Application List</span>
+            <span>Mantenimiento</span>
           </a>
         </nz-breadcrumb-item>
-        <nz-breadcrumb-item>Application</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Usuario</nz-breadcrumb-item>
       </nz-breadcrumb>
     </nz-space>
   </nz-page-header-extra>
@@ -24,12 +23,14 @@
       <div class="inner-box">
         <div class="bordered-div">
           <div class="p-3">
+
             <div nz-row class="mb-3" [nzGutter]="24">
               <div nz-col nzXs="24" nzMd="12" nzLg="12">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="10" style="text-align: left"
-                    >Tipo de documento</nz-form-label
-                  >
+                  <nz-form-label
+                    [nzSpan]="10"
+                    style="text-align: left"
+                  >Tipo de documento</nz-form-label>
                   <nz-form-control [nzSpan]="14">
                     <nz-select
                       nzShowSearch
@@ -38,22 +39,24 @@
                       formControlName="cboAnio"
                     >
                       <ng-container>
-                        <nz-option
-                          nzLabel="data.Text"
-                          [nzValue]="0"
-                        ></nz-option>
+                        <nz-option nzLabel="2024" [nzValue]="0"></nz-option>
                       </ng-container>
                     </nz-select>
                   </nz-form-control>
                 </nz-form-item>
               </div>
+
               <div nz-col nzXs="24" nzMd="12" nzLg="12">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="10" style="text-align: left"
-                    >N¬ de documento</nz-form-label
-                  >
+                  <nz-form-label
+                    [nzSpan]="10"
+                    style="text-align: left"
+                  >N° de documento</nz-form-label>
                   <nz-form-control [nzSpan]="14">
-                    <input type="text" nz-input />
+                    <input
+                      type="text"
+                      nz-input
+                      placeholder="N° de documento"/>
                   </nz-form-control>
                 </nz-form-item>
               </div>
@@ -61,29 +64,35 @@
             <div nz-row class="mb-3" [nzGutter]="24">
               <div nz-col nzXs="24" nzMd="24" nzLg="24">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="5" style="text-align: left"
-                    >Nombres</nz-form-label
-                  >
+                  <nz-form-label
+                    [nzSpan]="5"
+                    style="text-align: left"
+                  >Nombres</nz-form-label>
                   <nz-form-control [nzSpan]="19">
-                    <input type="text" nz-input />
+                    <input
+                      type="text"
+                      nz-input
+                      placeholder="Nombres"/>
                   </nz-form-control>
                 </nz-form-item>
               </div>
               <div nz-col nzXs="24" nzMd="24" nzLg="24">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="5" style="text-align: left"
-                    >Apellidos</nz-form-label
-                  >
+                  <nz-form-label
+                    [nzSpan]="5"
+                    style="text-align: left"
+                  >Apellidos</nz-form-label>
                   <nz-form-control [nzSpan]="19">
-                    <input type="text" nz-input />
+                    <input type="text" nz-input placeholder="Apellidos"/>
                   </nz-form-control>
                 </nz-form-item>
               </div>
               <div nz-col nzXs="24" nzMd="24" nzLg="24">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="5" style="text-align: left"
-                    >Estado</nz-form-label
-                  >
+                  <nz-form-label
+                    [nzSpan]="5"
+                    style="text-align: left"
+                  >Estado</nz-form-label>
                   <nz-form-control [nzSpan]="19">
                     <nz-select
                       nzShowSearch
@@ -110,20 +119,24 @@
       <div class="mt-5">
         <div nz-row class="d-grid p-2">
           <div nz-col class="d-grid">
-            <button class="btn btn-primary">Buscar</button>
+            <button class="btn btn-primary">
+              <i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Buscar
+            </button>
           </div>
         </div>
 
         <div nz-row class="d-grid p-2">
           <div nz-col class="d-grid">
-            <button class="btn btn-secondary">Limpiar</button>
+            <button class="btn btn-secondary">
+              <i class="fa-solid fa-eraser"></i>&nbsp;&nbsp;Limpiar
+            </button>
           </div>
         </div>
 
         <div nz-row class="d-grid p-2">
           <div nz-col class="d-grid">
             <button class="btn btn-primary" (click)="showModal()">
-              Nuevo registro
+              <i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Nuevo registro
             </button>
           </div>
         </div>
@@ -143,39 +156,64 @@
         <th>Nombres y Apellidos</th>
         <th>¿Completó su registro?</th>
         <th>Estado</th>
-        <th>Acciones</th>
+        <th style="text-align: center;">Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let data of nzTable.data">
+        <td>{{ data.document }}</td>
+        <td>{{ data.numberOfDocument }}</td>
         <td>{{ data.name }}</td>
-        <td>{{ data.age }}</td>
-        <td>{{ data.address }}</td>
-        <td>{{ data.name }}</td>
-        <td>{{ data.age }}</td>
+        <td>{{ data.registerComplete }}</td>
+        <td>{{ data.statusDescription }}</td>
         <td style="text-align: center">
           <button
+            *ngIf="data.active == 1 || data.active == 0 || data.active == 3"
             nz-button
             nzType="default"
             nzShape="circle"
             nz-tooltip
             nzTooltipTitle="Editar"
+            (click)="showModal()"
           >
             <i class="fas fa-edit"></i>
           </button>
-          &nbsp;
           <button
             nz-button
+            *ngIf="data.active == 2"
+            nzType="default"
+            nzShape="circle"
+            nz-tooltip
+            nzTooltipTitle="Visualizar"
+            (click)="showModal()"
+          >
+            <i class="fa-solid fa-eye"></i>
+          </button>
+          <button
+            nz-button
+            *ngIf="data.active == 1"
             nzType="default"
             nzShape="circle"
             nz-tooltip
             nzTooltipTitle="Desactivar"
+            (click)="DesactivarConfirm()"
           >
             <i class="fas fa-close"></i>
           </button>
-          &nbsp;
           <button
             nz-button
+            *ngIf="data.active == 2"
+            nzType="default"
+            nzShape="circle"
+            nz-tooltip
+            nzTooltipTitle="Activar"
+            (click)="ActivarConfirm()"
+          >
+            <i class="fas fa-check"></i>
+          </button>
+          <button
+            nz-button
+            *ngIf="data.active == 1"
             nzType="default"
             nzShape="circle"
             nz-tooltip
@@ -184,9 +222,9 @@
           >
             <i class="fas fa-file-circle-plus"></i>
           </button>
-           &nbsp;
           <button
             nz-button
+            *ngIf="data.active == 3"
             nzType="default"
             nzShape="circle"
             nz-tooltip

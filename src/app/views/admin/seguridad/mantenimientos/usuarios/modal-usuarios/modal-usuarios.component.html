@@ -16,13 +16,15 @@
     <div class="p-3">
       <div class="bordered-div">
         <div class="p-3">
+
           <div nz-row class="mb-3" [nzGutter]="24" nzAlign="middle">
             <div nz-col nzXs="24" nzMd="12" nzLg="12">
               <nz-form-item>
-                <nz-form-label [nzSpan]="10" style="text-align: left" nzRequired
-                  >Tipo de documento</nz-form-label
-                >
-                <nz-form-control [nzSpan]="14">
+                <nz-form-label
+                  style="text-align: left"
+                  nzRequired
+                >Tipo de documento</nz-form-label>
+                <nz-form-control [nzSpan]="24">
                   <nz-select
                     nzShowSearch
                     nzAllowClear
@@ -37,77 +39,97 @@
                 </nz-form-control>
               </nz-form-item>
             </div>
+
             <div nz-col nzXs="24" nzMd="12" nzLg="12">
               <nz-form-item>
-                <nz-form-label [nzSpan]="10" style="text-align: left" nzRequired
-                  >N° de documento</nz-form-label
-                >
-                <nz-form-control [nzSpan]="14">
-                  <input type="text" nz-input nzPlaceHolder="N° de Documento"/>
+                <nz-form-label
+                  style="text-align: left"
+                  nzRequired
+                >N° de documento</nz-form-label>
+                <nz-form-control [nzSpan]="21">
+                  <input type="text" nz-input placeHolder="N° de Documento"/>
+                </nz-form-control>
+                <nz-form-control [nzSpan]="3">
+                  <a nz-button nzType="link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </a>
                 </nz-form-control>
               </nz-form-item>
             </div>
+
             <div nz-col nzXs="24" nzMd="12" nzLg="12">
               <nz-form-item>
-                <nz-form-label [nzSpan]="10" style="text-align: left" nzRequired
-                  >Nombres</nz-form-label
-                >
-                <nz-form-control [nzSpan]="14">
-                  <input type="text" nz-input nzPlaceHolder="Nombres" />
+                <nz-form-label
+                  style="text-align: left"
+                  nzRequired
+                >Nombres</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input type="text" nz-input placeHolder="Nombres" disabled/>
                 </nz-form-control>
               </nz-form-item>
             </div>
+
             <div nz-col nzXs="24" nzMd="12" nzLg="12">
               <nz-form-item>
-                <nz-form-label [nzSpan]="10" style="text-align: left" nzRequired
-                  >Apellidos</nz-form-label
-                >
-                <nz-form-control [nzSpan]="14">
-                  <input type="text" nz-input nzPlaceHolder="Apellidos" />
+                <nz-form-label
+                  style="text-align: left"
+                  nzRequired
+                >Apellidos</nz-form-label>
+                <nz-form-control [nzSpan]="24">
+                  <input type="text" nz-input placeHolder="Apellidos" disabled/>
                 </nz-form-control>
               </nz-form-item>
             </div>
+
             <div nz-col nzXs="24" nzMd="24" nzLg="24">
               <nz-form-item>
-                <nz-form-label [nzSpan]="24" nzRequired>Correo electrónico</nz-form-label>
+                <nz-form-label
+                  nzRequired
+                >Correo electrónico</nz-form-label>
                 <nz-form-control [nzSpan]="24">
-                  <input type="text" nz-input nzPlaceHolder="Correo electronico" />
+                  <input type="text" nz-input placeHolder="Correo electronico" />
                 </nz-form-control>
               </nz-form-item>
             </div>
+
             <div nz-col nzXs="24" nzMd="12" nzLg="12">
               <nz-form-item>
-                <nz-form-label [nzSpan]="24" nzRequired>Fecha de Nacimiento</nz-form-label>
+                <nz-form-label>Fecha de Nacimiento</nz-form-label>
                 <nz-form-control [nzSpan]="24">
                   <nz-date-picker
                     [(ngModel)]="date"
                     (ngModelChange)="onChange($event)"
                     class="w-100"
+                    disabled
                   ></nz-date-picker>
                 </nz-form-control>
               </nz-form-item>
             </div>
+
             <div nz-col nzXs="24" nzMd="12" nzLg="12">
               <nz-form-item>
-                <nz-form-label [nzSpan]="24" nzRequired>Sexo</nz-form-label>
+                <nz-form-label>Sexo</nz-form-label>
                 <nz-form-control [nzSpan]="24">
                   <nz-select
                     nzShowSearch
                     nzAllowClear
                     nzPlaceHolder="Seleccionar"
                     formControlName="cboAnio"
+                    nzDisabled="true"
                   >
                     <ng-container>
-                      <nz-option nzLabel="data.Text" [nzValue]="0"></nz-option>
+                      <nz-option nzLabel="Masculino" nzValue="1"></nz-option>
+                      <nz-option nzLabel="Femenino" nzValue="2"></nz-option>
                     </ng-container>
                   </nz-select>
                 </nz-form-control>
               </nz-form-item>
             </div>
+
             <div nz-col nzXs="24" nzMd="12" nzLg="12">
-              <nz-form-label [nzSpan]="9">N° telefónico</nz-form-label>
+              <nz-form-label>N° telefónico</nz-form-label>
               <div nz-row>
-                <div nz-col nzXs="24" nzMd="5" nzLg="5">
+                <div nz-col nzXs="24" nzMd="7" nzLg="7">
                   <nz-form-item>
                     <nz-form-control [nzSpan]="22">
                       <nz-select
@@ -131,22 +153,27 @@
                     </nz-form-control>
                   </nz-form-item>
                 </div>
-                <div nz-col nzXs="24" nzMd="19" nzLg="19">
+
+                <div nz-col nzXs="24" nzMd="17" nzLg="17">
                   <nz-form-item>
                     <nz-form-control [nzSpan]="24">
-                      <input type="text" nz-input nzPlaceHolder="Número"/>
+                      <input type="text" nz-input placeHolder="Número"/>
                     </nz-form-control>
                   </nz-form-item>
                 </div>
               </div>
             </div>
+
             <div nz-col nzXs="24" nzMd="12" nzLg="12">
               <nz-form-item>
-                <nz-form-label [nzSpan]="24">Estado Civil</nz-form-label>
+                <nz-form-label>Estado Civil</nz-form-label>
                 <nz-form-control [nzSpan]="24">
-                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Seleccionar">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Seleccionar" nzDisabled="true">
                     <ng-container>
-                      <nz-option nzLabel="data.Text" [nzValue]="0"></nz-option>
+                      <nz-option nzLabel="Soltero" nzValue="1"></nz-option>
+                      <nz-option nzLabel="Casado" nzValue="2"></nz-option>
+                      <nz-option nzLabel="Viudo" nzValue="3"></nz-option>
+                      <nz-option nzLabel="Divorciado" nzValue="4"></nz-option>
                     </ng-container>
                   </nz-select>
                 </nz-form-control>
@@ -154,11 +181,9 @@
             </div>
             <div nz-col nzXs="24" nzMd="24" nzLg="24">
               <nz-form-item>
-                <nz-form-label
-                  >Dirección de domicilio</nz-form-label
-                >
+                <nz-form-label>Dirección de domicilio</nz-form-label>
                 <nz-form-control [nzSpan]="24">
-                  <input type="text" nz-input nzPlaceHolder="Direccon" />
+                  <input type="text" nz-input placeHolder="Direccíon" />
                 </nz-form-control>
               </nz-form-item>
             </div>
@@ -171,10 +196,10 @@
   <ng-template #modalFooter>
     <div style="text-align: center">
       <button nz-button nzType="primary" (click)="showConfirm()">
-        Guardar
+        <i class="fa-solid fa-floppy-disk"></i>&nbsp;&nbsp;Guardar
       </button>
       <button nz-button nzType="default" (click)="handleCancel()">
-        Cancelar
+        <i class="fa-solid fa-ban"></i>&nbsp;&nbsp;Cancelar
       </button>
     </div>
   </ng-template>

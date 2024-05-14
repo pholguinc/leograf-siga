@@ -3,9 +3,12 @@ import { NzButtonSize } from 'ng-zorro-antd/button';
 import { NzModalService } from 'ng-zorro-antd/modal';
 
 interface DataItem {
+  document: string;
+  numberOfDocument: number;
   name: string;
-  age: number;
-  address: string;
+  registerComplete: string;
+  statusDescription: string;
+  active: number;
 }
 
 @Component({
@@ -23,24 +26,36 @@ export class UsuariosComponent {
   isVisibleAsignarPermisos: boolean = false;
   listOfData: DataItem[] = [
     {
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
+      document: 'DNI',
+      numberOfDocument: 95786425,
+      name:'John Brown',
+      registerComplete: 'Si',
+      statusDescription: 'Activo',
+      active: 1,
     },
     {
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
+      document: 'RUC',
+      numberOfDocument: 4785236554351,
+      name:'Jim Green',
+      registerComplete: 'No',
+      statusDescription: 'Por confirmar',
+      active: 0,
     },
     {
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
+      document: 'DNI',
+      numberOfDocument: 48653297,
+      name:'Joe Black',
+      registerComplete: 'Si',
+      statusDescription: 'Inactivo',
+      active: 2,
     },
     {
-      name: 'Jim Red',
-      age: 32,
-      address: 'London No. 2 Lake Park',
+      document: 'Carnet de Extranjeria',
+      numberOfDocument: 542119381234,
+      name:'Jim Red',
+      registerComplete: 'No',
+      statusDescription: 'Expirado',
+      active: 3,
     },
   ];
   listOfDisplayData = [...this.listOfData];
@@ -104,4 +119,32 @@ export class UsuariosComponent {
       nzClassName: 'custom-modal'
     });
   }
+
+  DesactivarConfirm():void{
+    this.modalAlerta.confirm({
+      nzTitle: 'Inactivar usuario',
+      nzContent:
+        '<span>¿Estás seguro de que desea inactivar al usuario?</span><br><b>Al inactivar al usuario, este ya no tendrá acceso al sistema.</b>',
+        nzOkText: 'Si',
+        nzOkType: 'primary',
+        nzOkDanger: true,
+        nzOnOk: () => console.log('OK'),
+        nzCancelText: 'Cancelar',
+        nzOnCancel: () => console.log('Cancel'),
+    });
+  }
+
+  ActivarConfirm():void{
+    this.modalAlerta.confirm({
+      nzTitle: 'Activar usuario',
+      nzContent:
+        '<span>¿Estás seguro de que desea activar al usuario?</span><br><b>Al activar al usuario, este volverá a tener acceso al sistema.</b>',
+      nzOkText: 'Si',
+      nzOkType: 'primary',
+      nzOnOk: () => console.log('OK'),
+      nzCancelText: 'Cancelar',
+      nzOnCancel: () => console.log('Cancel'),
+    });
+  }
+
 }

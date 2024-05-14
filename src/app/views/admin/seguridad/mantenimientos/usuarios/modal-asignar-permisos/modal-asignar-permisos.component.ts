@@ -7,7 +7,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
   styleUrls: ['./modal-asignar-permisos.component.css'],
 })
 export class ModalAsignarPermisosComponent {
-  titleModal: string = 'Asignar Permisos a usuario';
+  titleModal: string = 'Asignar permisos a usuario';
   @Input() isVisibleAsignarPermisos: boolean = true;
   @Output() onGuardarAceptar: EventEmitter<any>;
   @Output() onCerrarCancelar: EventEmitter<any>;
@@ -20,6 +20,7 @@ export class ModalAsignarPermisosComponent {
   }
 
   handleCancel() {
+    this.isVisibleAsignarPermisos = false;
     this.onGuardarAceptarAsignarPermisos.emit(true);
   }
 
@@ -44,6 +45,7 @@ export class ModalAsignarPermisosComponent {
         '<span>¿Está seguro de que desea desactivar la asignación?</span>',
       nzOkText: 'Si',
       nzOkType: 'primary',
+      nzOkDanger: true,
       nzOnOk: () => console.log('OK'),
       nzCancelText: 'Cancelar',
       nzOnCancel: () => console.log('Cancel'),
@@ -53,12 +55,12 @@ export class ModalAsignarPermisosComponent {
 
   showConfirm() {
     this.modalAlerta.confirm({
-      nzTitle: 'Desactivar asignación',
+      nzTitle: 'Confirmar asignación',
       nzContent:
         '<span>¿Está seguro de que desea asignar permisos al nuevo usuario?</span>',
       nzOkText: 'Si',
       nzOkType: 'primary',
-      nzOnOk: () => console.log('OK'),
+      nzOnOk: () => this.handleCancel(),
       nzCancelText: 'Cancelar',
       nzOnCancel: () => console.log('Cancel'),
       nzWidth: '600px',

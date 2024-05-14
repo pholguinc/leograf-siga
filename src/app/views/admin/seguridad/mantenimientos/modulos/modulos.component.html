@@ -1,6 +1,6 @@
 <div style="text-align: end;">
   <nz-breadcrumb>
-    <nz-breadcrumb-item>Admin</nz-breadcrumb-item>
+    <nz-breadcrumb-item>Seguridad</nz-breadcrumb-item>
     <nz-breadcrumb-item>
       <a>Mantenimiento</a>
     </nz-breadcrumb-item>
@@ -109,18 +109,19 @@
               <button
                 nz-button nzType="default" nzShape="circle"
                 nz-tooltip
-                nzTooltipTitle="Editar"
+                nzTooltipTitle="Visualizar"
+                (click)="showModal()"
               >
-               <i class="fas fa-edit"></i>
+                <i class="fa-solid fa-eye"></i>
               </button>
               &nbsp;
               <button
                 nz-button nzType="default" nzShape="circle"
                 nz-tooltip
-                nzTooltipTitle="Desactivar"
+                nzTooltipTitle="Activar"
                 (click)="showActivarConfirm()"
               >
-               <i class="fas fa-close"></i>
+                <i class="fa-solid fa-check"></i>
               </button>
             </td>
           </tr>
@@ -133,9 +134,10 @@
               <button
                 nz-button nzType="default" nzShape="circle"
                 nz-tooltip
-                nzTooltipTitle="Editar"
+                nzTooltipTitle="Visualizar"
+                (click)="showModal()"
               >
-               <i class="fas fa-edit"></i>
+                <i class="fa-solid fa-eye"></i>
               </button>
               &nbsp;
               <button
@@ -158,8 +160,9 @@
                 nz-button nzType="default" nzShape="circle"
                 nz-tooltip
                 nzTooltipTitle="Editar"
+                (click)="showModal()"
               >
-               <i class="fas fa-edit"></i>
+                <i class="fas fa-edit"></i>
               </button>
               &nbsp;
               <button
@@ -168,7 +171,7 @@
                 nzTooltipTitle="Desactivar"
                 (click)="showDesactivarConfirm()"
               >
-               <i class="fas fa-close"></i>
+                <i class="fas fa-close"></i>
               </button>
             </td>
           </tr>
@@ -182,6 +185,7 @@
                 nz-button nzType="default" nzShape="circle"
                 nz-tooltip
                 nzTooltipTitle="Editar"
+                (click)="showModal()"
               >
               <i class="fas fa-edit"></i>
               </button>
@@ -192,7 +196,7 @@
                 nzTooltipTitle="Desactivar"
                 (click)="showDesactivarConfirm()"
               >
-               <i class="fas fa-close"></i>
+                <i class="fas fa-close"></i>
               </button>
             </td>
           </tr>

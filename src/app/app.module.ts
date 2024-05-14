@@ -16,6 +16,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NgZorroAntdModule } from './ng-zorro.module';
 import { LayoutModule } from './layout/layout.module';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(es);
 
@@ -32,7 +33,8 @@ registerLocaleData(es);
     NzMenuModule,
     NgZorroAntdModule,
     LayoutModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent],

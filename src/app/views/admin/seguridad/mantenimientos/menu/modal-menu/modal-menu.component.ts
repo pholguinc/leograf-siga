@@ -12,7 +12,7 @@ export class ModalMenuComponent {
   @Output() onCerrarCancelar: EventEmitter<any>;
 
   public isVisible: boolean = true;
-  public titleModal: string = 'Agregar sede';
+  public titleModal: string = 'Agregar menu';
 
   constructor(
     private modal: NzModalService

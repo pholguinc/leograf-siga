@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 
 @Component({
@@ -8,4 +9,24 @@ import { NzButtonSize } from 'ng-zorro-antd/button';
 })
 export class AsignarPermisosComponent {
   size: NzButtonSize = 'large';
+
+  constructor(
+    private router: Router,
+  ){
+
+  }
+
+  volver(){
+    this.router.navigate([
+      '/../admin/seguridad/mantenimientos/asignar-roles'
+    ]);
+  }
+
+  guardar(){
+    this.router.navigate([
+      '/../admin/seguridad/mantenimientos/asignar-roles'
+    ]);
+
+  }
+
 }

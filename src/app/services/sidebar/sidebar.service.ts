@@ -24,7 +24,7 @@ export class SidebarService {
           routerLink: '/admin/seguridad/mantenimientos/modulos',
         },
         {
-          title: 'Menus',
+          title: 'Menús',
           routerLink: '/admin/seguridad/mantenimientos/menu'
         },
         {
