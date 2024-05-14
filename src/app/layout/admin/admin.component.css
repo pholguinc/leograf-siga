@@ -10,7 +10,7 @@ a{
 }
 
 .content-login{
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #000;
   font-weight: 400;
 }
@@ -56,6 +56,7 @@ a{
   line-height: 64px;
   background: #001529;
   transition: all .3s;
+  color: #fff;
 }
 
 .container-icon{
@@ -72,7 +73,6 @@ a{
 
 .container-date {
   color: #fff;
-  padding-left: 24px;
 }
 
 .container-user{
@@ -125,4 +125,9 @@ nz-content {
   padding: 24px;
   background: #fff;
   height: 100%;
+}
+
+.text-profile{
+  font-size: 20px;
+  color:#000;
 }

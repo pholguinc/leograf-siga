@@ -1,15 +1,42 @@
 <header class="header">
   <div class="logo">
-    <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
+    <i class="fa-solid fa-circle-user fa-5x"></i>
+
     <ul style="width: 100%">
-      <li class="sub-menu">Bienvenido(a)</li>
-      <li class="sub-menu">{{ nombreUsuario }}</li>
+      <li class="sub-menu"><h5>Bienvenido(a)</h5></li>
+      <li class="sub-menu"><h5>{{ nombreUsuario }}</h5></li>
       <li class="sub-menu">
         <div class="row">
-          <div class="col-md-1"><label class="form-label">Sede:</label></div>
-          <div class="col-md-3"><select placeholder="seleccione" class="form-control"></select></div>
-          <div class="col-md-1"><label class="form-label">Rol:</label></div>
-          <div class="col-md-3"><select placeholder="seleccione" class="form-control"></select></div>
+          <div class="col-md-1">
+            <label><h5>Sede: </h5></label>
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div class="col-md-3">
+            <nz-select
+              [nzSize]="size"
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Seleccionar Sede"
+            >
+              <nz-option nzValue="1" nzLabel="Comas"></nz-option>
+              <nz-option nzValue="2" nzLabel="Los olivos"></nz-option>
+            </nz-select>
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div class="col-md-1">
+            <label><h5>Rol: </h5></label>
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div class="col-md-3">
+            <nz-select
+              [nzSize]="size"
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Seleccionar Rol"
+            >
+              <nz-option nzValue="1" nzLabel="Administrador"></nz-option>
+            </nz-select>
+          </div>
         </div>
       </li>
     </ul>
@@ -17,8 +44,8 @@
 
   <nav class="menu-sesion">
     <ul>
-      <li class="sub-menu">Ultimo ingreso: {{ fechaUltimoIngreso }}</li>
-      <li class="sub-menu sesion"><a href="/auth/login">Cerrar sesión</a></li>
+      <li class="sub-menu"><h5>Ultimo ingreso: {{ fechaUltimoIngreso }}</h5></li>
+      <li class="sub-menu sesion"><a href="/auth/login"><h5>Cerrar sesión</h5></a></li>
     </ul>
   </nav>
 </header>

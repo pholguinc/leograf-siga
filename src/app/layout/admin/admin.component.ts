@@ -16,17 +16,17 @@ import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 export class AdminComponent implements OnInit {
 
   isCollapsed = false;
-  showIconsOnly: boolean = true;
   routeNameStorage: string = '';
 
   fechaUltimoRegistro: string = "13/04/2024 - 17:20pm";
   usuario: string = "Sebastián Olivera Leyva";
   rolUsuario: string = "Administrador";
-  sedeUsuario: String = "Comas";
+  sedeUsuario: string = "Comas";
+  moduloSeleccionado: string = "Seguridad";
 
   sidebarItems!: any[];
 
-  shouldHideSidebar: boolean = false;
+  showSidebar: boolean = false;
 
   constructor(
     private sidebarService: SidebarService,
@@ -84,4 +84,13 @@ export class AdminComponent implements OnInit {
   change(value: boolean): void {
     console.log(value);
   }
+
+  showUser(){
+    this.showSidebar = true;
+  }
+
+  close(){
+    this.showSidebar = false;
+  }
+
 }

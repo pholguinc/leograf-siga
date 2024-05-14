@@ -12,24 +12,11 @@
         <img src="../../../assets/images/logo-leograf.png" alt="logo" />
       </a>
     </div>
+
     <div class="container-date" *ngIf="shouldShowContainerDate()">
-      <h6 class="font-weight-bold">Último ingreso: {{ fechaUltimoRegistro }}</h6>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="container-icon text-center text-dark">
-            <i id="icon" class="fas fa-user fa-3x"></i>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <h5 class="mt-2">Bienvenido(a):</h5>
-          <p>{{ usuario }}</p>
-        </div>
-      </div>
-      <div class="row mt-2">
-        <h5 class="text-user"><b>Rol: </b><span>{{ rolUsuario }}</span></h5>
-        <h5 class="text-user"><b>Sede: </b><span>{{ sedeUsuario }}</span></h5>
-      </div>
+      <h4 style="text-align: center;">Modulo: {{ moduloSeleccionado }}</h4>
     </div>
+
     <ul
       nz-menu
       nzTheme="dark"
@@ -83,18 +70,71 @@
     </div>
 
     <div style="display: flex; align-items: center; margin-right: 20px;">
-      <a nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomRight" class="content-login">
-        <span nz-icon nzType="user" class="text-dark"></span>
+      <a (click)="showUser()" class="content-login">
+        <i class="fa-solid fa-circle-user fa-lg"></i>
+        &nbsp;
         {{ usuario }}
-        <span nz-icon nzType="down" class="mt-2 text-dark"></span>
+        &nbsp;
+        <i class="fa-solid fa-chevron-down"></i>
       </a>
-      <nz-dropdown-menu #menu="nzDropdownMenu">
-        <ul nz-menu>
-          <li nz-menu-item (click)="regresarModulos()">Cambiar de módulo</li>
-          <li nz-menu-item>Cambiar Contraseña</li>
-          <li nz-menu-item (click)="cerrarSeccion()">Cerrar Sesión</li>
-        </ul>
-      </nz-dropdown-menu>
+      <nz-drawer
+        [nzClosable]="false"
+        [nzVisible]="showSidebar"
+        nzPlacement="right"
+        (nzOnClose)="close()"
+      >
+      <ng-container *nzDrawerContent>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="container-icon text-center text-dark">
+              <i id="icon" class="fas fa-user fa-3x"></i>
+            </div>
+          </div>
+
+          <div class="col-md-9">
+            <h5 class="mt-2">Bienvenido(a):</h5>
+            <h5>{{ usuario }}</h5>
+          </div>
+
+        </div>
+
+        <div class="row mt-2">
+          <h5 class="text-user"><b>Rol: </b><span>{{ rolUsuario }}</span></h5>
+          <h5 class="text-user"><b>Sede: </b><span>{{ sedeUsuario }}</span></h5>
+        </div>
+
+        <h6 class="font-weight-bold"><b>Último ingreso:</b> {{ fechaUltimoRegistro }}</h6>
+
+        <hr/>
+
+        <div class="row mt-2">
+
+          <div class="text-profile">
+            <a (click)="regresarModulos()">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>&nbsp;&nbsp;Cambiar de módulo
+            </a>
+          </div>
+
+          <br>
+
+          <div class="text-profile">
+            <a>
+              <i class="fa-solid fa-key"></i>&nbsp;&nbsp;Cambiar Contraseña
+            </a>
+          </div>
+
+          <br>
+
+          <div class="text-profile">
+            <a (click)="cerrarSeccion()">
+              <i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Cerrar Sesión
+            </a>
+          </div>
+
+        </div>
+
+      </ng-container>
+      </nz-drawer>
     </div>
   </div>
 </nz-header>

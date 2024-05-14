@@ -42,29 +42,29 @@ export class SidebarService {
       ],
     },
     //! rutas de tablas maestras
-    {
-      title: 'Archivos Maestros',
-      icon: 'setting',
-      isSubMenu: true,
-      children: [
-        {
-          title: 'Articulos',
-          routerLink: '/admin/tablas-maestras/archivos-maestros/articulos'
-        },
-        {
-          title: 'Clientes y Proveedores',
-          routerLink: '/admin/tablas-maestras/archivos-maestros/clientes-proveedores'
-        },
-        {
-          title: 'Maquinas', routerLink: '/admin/tablas-maestras/archivos-maestros/maquinas'
-        },
-        {
-          title: 'Unidad de medidas',
-          routerLink: '/admin/tablas-maestras/archivos-maestros/unidad-medidas'
-        },
+    // {
+    //   title: 'Archivos Maestros',
+    //   icon: 'setting',
+    //   isSubMenu: true,
+    //   children: [
+    //     {
+    //       title: 'Articulos',
+    //       routerLink: '/admin/tablas-maestras/archivos-maestros/articulos'
+    //     },
+    //     {
+    //       title: 'Clientes y Proveedores',
+    //       routerLink: '/admin/tablas-maestras/archivos-maestros/clientes-proveedores'
+    //     },
+    //     {
+    //       title: 'Maquinas', routerLink: '/admin/tablas-maestras/archivos-maestros/maquinas'
+    //     },
+    //     {
+    //       title: 'Unidad de medidas',
+    //       routerLink: '/admin/tablas-maestras/archivos-maestros/unidad-medidas'
+    //     },
 
-      ],
-    },
+    //   ],
+    // },
 
   ];
 

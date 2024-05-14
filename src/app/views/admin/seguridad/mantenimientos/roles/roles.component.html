@@ -54,19 +54,25 @@
     <div nz-col class="gutter-row" [nzSpan]="6">
       <div nz-row class="d-grid p-2">
         <div nz-col class="d-grid">
-          <button class="btn btn-primary">Buscar</button>
+          <button class="btn btn-primary">
+            <i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Buscar
+          </button>
         </div>
       </div>
 
       <div nz-row class="d-grid p-2 ">
         <div nz-col class="d-grid">
-          <button class="btn btn-secondary">Limpiar</button>
+          <button class="btn btn-secondary">
+            <i class="fa-solid fa-eraser"></i>&nbsp;&nbsp;Limpiar
+          </button>
         </div>
       </div>
 
       <div nz-row class="d-grid p-2">
         <div nz-col class="d-grid">
-          <button class="btn btn-primary" (click)="showModal()">Nuevo registro</button>
+          <button class="btn btn-primary" (click)="showModal()">
+            <i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Nuevo registro
+          </button>
         </div>
       </div>
     </div>
@@ -102,7 +108,7 @@
                 nzTooltipTitle="Editar"
                 (click)="showModal()"
               >
-              A
+                <i class="fa-solid fa-pen-to-square"></i>
               </button>
               &nbsp;
               <button
@@ -111,7 +117,7 @@
                 nzTooltipTitle="Desactivar"
                 (click)="showDesactivarConfirm()"
               >
-              B
+                <i class="fa-solid fa-xmark"></i>
               </button>
             </td>
           </tr>
@@ -127,7 +133,7 @@
                 nzTooltipTitle="Editar"
                 (click)="showModal()"
               >
-              A
+                <i class="fa-solid fa-pen-to-square"></i>
               </button>
               &nbsp;
               <button
@@ -136,7 +142,7 @@
                 nzTooltipTitle="Activar"
                 (click)="showActivarConfirm()"
               >
-              B
+                <i class="fa-solid fa-check"></i>
               </button>
             </td>
           </tr>
@@ -152,7 +158,7 @@
                 nzTooltipTitle="Editar"
                 (click)="showModal()"
               >
-              A
+                <i class="fa-solid fa-pen-to-square"></i>
               </button>
               &nbsp;
               <button
@@ -161,7 +167,7 @@
                 nzTooltipTitle="Desactivar"
                 (click)="showDesactivarConfirm()"
               >
-              B
+                <i class="fa-solid fa-xmark"></i>
               </button>
             </td>
           </tr>
