@@ -1,0 +1,153 @@
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzWidth="35%"
+  [nzContent]="modalBody"
+  [nzFooter]="modalFooter"
+  (nzOnCancel)="handleCancel()"
+  [nzMaskClosable]="false"
+  [nzKeyboard]="false"
+>
+
+  <ng-template #modalBody>
+    <div nz-row [nzGutter]="24">
+      <div nz-col>
+        <div class="p-3 d-flex justify-content-center">
+          <div class="card">
+            <div class="card-header header-login bg-secondary"></div>
+            <div class="p-2 d-flex justify-content-center">
+              <img
+                src="../../../../assets/images/logo-leograf.png"
+                alt=""
+                width="300"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="card-body">
+              <div class="border border-secondary p-2">
+                <ng-container *ngIf="isVisibleFormRecuperarContrasenia">
+                  <div
+                    class="text-white bg-dark p-3 text-center font-weight-bold header-card-login"
+                  >
+                    RECUPERAR CONTRASEÑA
+                  </div>
+
+                  <div class="p-4 mt-3">
+                    <form nz-form>
+                      <nz-form-item>
+                        <nz-form-label [nzSpan]="8">Nueva contraseña</nz-form-label>
+                        <nz-form-control [nzSpan]="16">
+                          <nz-input-group [nzSuffix]="suffixTemplate" class="border border-dark">
+                            <input
+                              [type]="passwordVisible1 ? 'text' : 'password'"
+                              nz-input
+                            />
+                          </nz-input-group>
+                          <ng-template #suffixTemplate>
+                            <span
+                              nz-icon
+                              [nzType]="passwordVisible1 ? 'eye-invisible' : 'eye'"
+                              (click)="passwordVisible1 = !passwordVisible1"
+                            ></span>
+                          </ng-template>
+                        </nz-form-control>
+                      </nz-form-item>
+
+                      <nz-form-item>
+                        <nz-form-label [nzSpan]="8">Confirmar nueva contraseña</nz-form-label>
+                        <nz-form-control [nzSpan]="16">
+                          <nz-input-group [nzSuffix]="suffixTemplate2" class="border border-dark">
+                            <input
+                              [type]="passwordVisible2 ? 'text' : 'password'"
+                              nz-input
+                            />
+                          </nz-input-group>
+                          <ng-template #suffixTemplate2>
+                            <span
+                              nz-icon
+                              [nzType]="passwordVisible2 ? 'eye-invisible' : 'eye'"
+                              (click)="passwordVisible2 = !passwordVisible2"
+                            ></span>
+                          </ng-template>
+                        </nz-form-control>
+                      </nz-form-item>
+
+                      <nz-form-item>
+                        <nz-form-label
+                          >Para crear la contraseña se debe considerar como
+                          mínimo</nz-form-label
+                        >
+                      </nz-form-item>
+
+                      <nz-form-item>
+                        <div nz-row>
+                          <div nz-col>
+                            <ul>
+                              <li>Mín. 8 caracteres</li>
+                              <li>Ningún espacio</li>
+                              <li>1 mayúscula</li>
+                            </ul>
+                          </div>
+                          <div nz-col>
+                            <ul>
+                              <li>1 minúscula</li>
+                              <li>1 número</li>
+                              <li>1 carácter especial</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </nz-form-item>
+
+                      <div class="text-center">
+                        <button class="btn btn-primary d-inline-block mb-2" (click)="fnVisibleAvisoContraseniaCambiada()">
+                          Aceptar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </ng-container>
+
+                <ng-container *ngIf="isVisbleAvisoReinicioSeccion">
+                  <div
+                    class="text-white bg-dark p-3 text-center font-weight-bold header-card-login"
+                  >
+                    AVISO
+                  </div>
+
+                  <div class="mt-4">
+                    <p>
+                      Estimado usuario, su contraseña ha sido reestablecida
+                      correctamente.
+                    </p>
+                  </div>
+
+                  <div class="mt-4">
+                    <p>
+                      Recibirás un mensaje por correo electronico donde podras
+                      visualizar tus nuevos datos de inicio de sesión.
+                    </p>
+                  </div>
+
+                  <div class="text-center">
+                    <button
+                      (click)="regresarLogin()"
+                      class="btn btn-primary d-inline-block mb-2"
+                    >
+                      Aceptar
+                    </button>
+                  </div>
+                </ng-container>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #modalFooter>
+
+  </ng-template>
+
+</nz-modal>

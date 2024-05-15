@@ -15,7 +15,8 @@ import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 })
 export class AdminComponent implements OnInit {
 
-  isCollapsed = false;
+  isCollapsed:boolean = false;
+  isVisibleModalRecuperarContrasenia: boolean = false;
   routeNameStorage: string = '';
 
   fechaUltimoRegistro: string = "13/04/2024 - 17:20pm";
@@ -65,6 +66,18 @@ export class AdminComponent implements OnInit {
     this.routeNameStorage = routeName;
   }
 
+  onGuardarAceptar(event: any) {
+    if (event) {
+      this.isVisibleModalRecuperarContrasenia = false;
+    }
+  }
+
+  onCerrarCancelar(event: any) {
+    if (event) {
+      this.isVisibleModalRecuperarContrasenia = false;
+    }
+  }
+
   cerrarSeccion(){
     this.router.navigate([
       'auth/login'
@@ -91,6 +104,10 @@ export class AdminComponent implements OnInit {
 
   close(){
     this.showSidebar = false;
+  }
+
+  fnVisibleModal(){
+    this.isVisibleModalRecuperarContrasenia = true;
   }
 
 }

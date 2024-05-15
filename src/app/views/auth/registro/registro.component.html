@@ -15,11 +15,13 @@
                     <nz-select
                       nzShowSearch
                       nzAllowClear
-                      nzPlaceHolder="--Seleccione--"
+                      nzPlaceHolder="Seleccionar"
                       class="border border-dark"
                     >
                       <ng-container>
-                        <nz-option nzLabel="Text" [nzValue]="0"></nz-option>
+                        <nz-option nzLabel="DNI" [nzValue]="0"></nz-option>
+                        <nz-option nzLabel="RUC" [nzValue]="0"></nz-option>
+                        <nz-option nzLabel="Carnet de Extranjeria" [nzValue]="0"></nz-option>
                       </ng-container>
                     </nz-select>
                   </nz-form-control>
@@ -71,7 +73,7 @@
                 <nz-form-label>Correo electrónico</nz-form-label>
                 <nz-form-item>
                   <nz-form-control [nzSpan]="24">
-                    <input nz-input class="border border-dark" />
+                    <input nz-input class="border border-dark" placeholder="Ingrese tu correo electronico"/>
                   </nz-form-control>
                 </nz-form-item>
               </div>
@@ -101,9 +103,7 @@
                           <ng-template #suffixTemplate>
                             <span
                               nz-icon
-                              [nzType]="
-                                passwordVisible ? 'eye-invisible' : 'eye'
-                              "
+                              [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
                               (click)="passwordVisible = !passwordVisible"
                             ></span>
                           </ng-template>
@@ -113,7 +113,7 @@
                     <div nz-col nzXs="24" nzMd="24" nzLg="24">
                       <nz-form-label>Recuperar Contraseña</nz-form-label>
                       <nz-form-item>
-                        <nz-input-group [nzSuffix]="suffixTemplate" class="border border-dark">
+                        <nz-input-group [nzSuffix]="suffixTemplate2" class="border border-dark">
                           <input
                             [type]="passwordRecoveryVisible ? 'text' : 'password'"
                             nz-input
@@ -121,7 +121,7 @@
                             [(ngModel)]="passwordRecovery"
                           />
                         </nz-input-group>
-                        <ng-template #suffixTemplate>
+                        <ng-template #suffixTemplate2>
                           <span
                             nz-icon
                             [nzType]="passwordRecoveryVisible ? 'eye-invisible' : 'eye'"
@@ -153,12 +153,10 @@
       </div>
     </div>
 
-    <div nz-row [nzJustify]="'center'" class="mt-3">
+    <div nz-row style="justify-content: center;" class="mt-3">
       <nz-form-item>
         <nz-form-control>
-          <button nz-button nzType="primary">Ingresar</button>
-          <br />
-          <a href="#" class="d-inline-block">¿Olvidaste tu contraseña? Recupérala aquí</a>
+            <button (click)="fnVisibleAvisoRegistro()" class="btn btn-primary">Ingresar</button>
         </nz-form-control>
       </nz-form-item>
     </div>

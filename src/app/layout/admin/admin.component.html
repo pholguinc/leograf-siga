@@ -118,7 +118,7 @@
           <br>
 
           <div class="text-profile">
-            <a>
+            <a (click)="fnVisibleModal()">
               <i class="fa-solid fa-key"></i>&nbsp;&nbsp;Cambiar Contraseña
             </a>
           </div>
@@ -146,3 +146,10 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
+
+<ng-container *ngIf="isVisibleModalRecuperarContrasenia">
+  <app-modal-recuperar-contrasenia
+    (onGuardarAceptar)="onGuardarAceptar($event)"
+    (onCerrarCancelar)="onCerrarCancelar($event)"
+  ></app-modal-recuperar-contrasenia>
+</ng-container>

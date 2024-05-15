@@ -10,15 +10,32 @@
               <nz-form-item>
                 <nz-form-label [nzSpan]="5">Contraseña</nz-form-label>
                 <nz-form-control [nzSpan]="18">
-                  <input nz-input class="border border-dark" />
+
+                  <nz-input-group [nzSuffix]="suffixTemplate" class="border border-dark">
+                    <input
+                      [type]="passwordVisible ? 'text' : 'password'"
+                      nz-input
+                    />
+                  </nz-input-group>
+
+                  <ng-template #suffixTemplate>
+                    <span
+                      nz-icon
+                      [nzType]="
+                        passwordVisible ? 'eye-invisible' : 'eye'
+                      "
+                      (click)="passwordVisible = !passwordVisible"
+                    ></span>
+                  </ng-template>
+
                 </nz-form-control>
               </nz-form-item>
               <div class="text-center">
-                <a href="#" class="btn btn-primary d-inline-block mb-2"
+                <a href="/home" class="btn btn-primary d-inline-block mb-2"
                   >Ingresar</a
                 >
                 <br />
-                <a href="auth/recuperar-contrasenia" class="d-inline-block"
+                <a href="/auth/recuperar-contrasenia" class="d-inline-block"
                   >¿Olvidaste tu contraseña? Recupérala aquí</a
                 >
               </div>

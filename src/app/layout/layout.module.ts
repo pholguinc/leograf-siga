@@ -9,10 +9,11 @@ import { RegistroLayoutComponent } from './auth/registro/registro-layout-compone
 import { HomeLayoutComponent } from './home/home-layout.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { RecuperarContraseniaLayoutComponent } from './auth/recuperar-contrasenia/recuperar-contrasenia-layout.component';
+import { ModalRecuperarContraseniaComponent } from './admin/modal-recuperar-contrasenia/modal-recuperar-contrasenia.component';
 
 
 @NgModule({
-  declarations: [LoginAuthLayoutComponent, AdminComponent, ModulosComponent, RegistroLayoutComponent, HomeLayoutComponent, RecuperarContraseniaLayoutComponent],
+  declarations: [LoginAuthLayoutComponent, AdminComponent, ModulosComponent, RegistroLayoutComponent, HomeLayoutComponent, RecuperarContraseniaLayoutComponent, ModalRecuperarContraseniaComponent],
   imports: [CommonModule, NgZorroAntdModule, RouterModule, NzIconModule],
 })
 export class LayoutModule {}

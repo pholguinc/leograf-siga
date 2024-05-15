@@ -1,24 +1,22 @@
-<ng-container
-  *ngIf="isVisibleFormRecuperarContrasenia"
->
-<div>
-  <h4 class="text-white bg-dark p-3 text-center font-weight-bold header-card-login">
-    RECUPERAR CONTRASEÑA
-  </h4>
+<ng-container *ngIf="isVisibleFormRecuperarContrasenia">
+  <div>
+    <h4 class="text-white bg-dark p-3 text-center font-weight-bold header-card-login">
+      RECUPERAR CONTRASEÑA
+    </h4>
 
-  <div class="mt-4">
-    <p>Por favor, ingresa tu tipo, número de documento y correo electrónico.</p>
-    <p>
-      Recibirás un enlace por correo electrónico donde podrás crear una nueva
-      contraseña.
-    </p>
-  </div>
-  <div class="p-4 mt-3">
-    <form nz-form>
-      <nz-form-item>
-        <nz-form-label [nzSpan]="9">Tipo de Documento</nz-form-label>
-        <nz-form-control nzHasFeedback [nzSpan]="15">
-          <nz-select
+    <div class="mt-4">
+      <p>Por favor, ingresa tu tipo, número de documento y correo electrónico.</p>
+      <p>Recibirás un enlace por correo electrónico donde podrás crear una nueva contraseña.</p>
+    </div>
+
+    <div class="p-4 mt-3">
+
+      <form nz-form>
+
+        <nz-form-item>
+          <nz-form-label [nzSpan]="9">Tipo de Documento</nz-form-label>
+          <nz-form-control nzHasFeedback [nzSpan]="15">
+            <nz-select
               nzShowSearch
               nzAllowClear
               nzPlaceHolder="Todos"
@@ -30,45 +28,154 @@
                 <nz-option nzLabel="Carnet de Extranjeria" nzValue="3"></nz-option>
               </ng-container>
             </nz-select>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label [nzSpan]="9">Número de documento</nz-form-label>
-        <nz-form-control [nzSpan]="15">
-          <input nz-input class="border border-dark" />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label [nzSpan]="9">Correo electrónico</nz-form-label>
-        <nz-form-control [nzSpan]="15">
-          <input nz-input class="border border-dark" />
-        </nz-form-control>
-      </nz-form-item>
-      <div class="text-center">
-        <button (click)="fnEnvioCorreoConfirmacion()" class="btn btn-primary d-inline-block mb-2">Enviar</button>
-      </div>
-    </form>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label [nzSpan]="9">Número de documento</nz-form-label>
+          <nz-form-control [nzSpan]="15">
+            <input nz-input class="border border-dark" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label [nzSpan]="9">Correo electrónico</nz-form-label>
+          <nz-form-control [nzSpan]="15">
+            <input nz-input class="border border-dark" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <div class="text-center">
+          <button
+            (click)="fnEnvioCorreoConfirmacion()"
+            class="btn btn-primary d-inline-block mb-2"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </ng-container>
 
-<ng-container
-  *ngIf="isVisibleEnvioCorreo"
->
-<div>
-  <h4
-    class="text-white bg-dark p-3 text-center font-weight-bold header-card-login"
-  >
+<ng-container *ngIf="isVisibleAvisoEnvioCorreo">
+  <div>
+    <h4 class="text-white bg-dark p-3 text-center font-weight-bold header-card-login">
+      RECUPERAR CONTRASEÑA
+    </h4>
+
+    <div class="mt-4">
+      <p>Se ha enviado un enlace a su correo electrónico ingresado, con la finalidad de crear una nueva contraseña</p>
+      <p>El enlace enviado tendrá una duración de 24 horas.</p>
+    </div>
+
+    <div class="text-center">
+      <a (click)="fnCambiarContrasenia()" class="btn btn-primary d-inline-block mb-2">Aceptar</a>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isVisibleFormCambioContrasenia">
+
+  <div class="text-white bg-dark p-3 text-center font-weight-bold header-card-login">
     RECUPERAR CONTRASEÑA
-  </h4>
+  </div>
+
+  <div class="p-4 mt-3">
+    <form nz-form>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8">Nueva contraseña</nz-form-label>
+        <nz-form-control [nzSpan]="16">
+          <nz-input-group [nzSuffix]="suffixTemplate" class="border border-dark">
+            <input
+              [type]="passwordVisible1 ? 'text' : 'password'"
+              nz-input
+            />
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+            <span
+              nz-icon
+              [nzType]="passwordVisible1 ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible1 = !passwordVisible1"
+            ></span>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8">Confirmar nueva contraseña</nz-form-label>
+        <nz-form-control [nzSpan]="16">
+          <nz-input-group [nzSuffix]="suffixTemplate2" class="border border-dark">
+            <input
+              [type]="passwordVisible2 ? 'text' : 'password'"
+              nz-input
+            />
+          </nz-input-group>
+          <ng-template #suffixTemplate2>
+            <span
+              nz-icon
+              [nzType]="passwordVisible2 ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible2 = !passwordVisible2"
+            ></span>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label>Para crear la contraseña se debe considerar como mínimo</nz-form-label>
+      </nz-form-item>
+
+      <nz-form-item>
+        <div nz-row>
+          <div nz-col>
+            <ul>
+              <li>Mín. 8 caracteres</li>
+              <li>Ningún espacio</li>
+              <li>1 mayúscula</li>
+            </ul>
+          </div>
+          <div nz-col>
+            <ul>
+              <li>1 minúscula</li>
+              <li>1 número</li>
+              <li>1 carácter especial</li>
+            </ul>
+          </div>
+        </div>
+      </nz-form-item>
+
+      <div class="text-center">
+        <button
+          (click)="fnCambioExitoso()"
+          class="btn btn-primary d-inline-block mb-2"
+        >
+          Aceptar
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="isVisibleAvisoCambioExito">
+
+  <div class="text-white bg-dark p-3 text-center font-weight-bold header-card-login">
+    AVISO
+  </div>
+
   <div class="mt-4">
-    <p>Se ha enviado un enlace a su correo electrónico ingresado, con la fnalidad de crear una nueva contraseña</p>
-    <p>
-      El enlace enviado tendrá una duración de 24 horas.
-    </p>
+    <p>Estimado usuario, su contraseña ha sido reestablecida correctamente.</p>
   </div>
+
   <div class="text-center">
-    <a href="" class="btn btn-primary d-inline-block mb-2">Aceptar</a>
+    <button
+      (click)="regresarLogin()"
+      class="btn btn-primary d-inline-block mb-2"
+    >
+      Aceptar
+    </button>
   </div>
-</div>
+
 </ng-container>

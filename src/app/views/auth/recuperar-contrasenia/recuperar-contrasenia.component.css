@@ -1,3 +1,11 @@
 .ant-form-item-label{
   text-align: left;;
 }
+
+ul {
+  list-style-type: none;
+}
+
+li:before {
+  content: "- ";
+}
