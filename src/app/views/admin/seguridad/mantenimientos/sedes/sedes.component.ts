@@ -34,7 +34,7 @@ export class SedesComponent {
     this.modal.confirm({
       nzTitle: 'Inactivar sede',
       nzContent:
-        '<span>¿Está seguro de que desea inactivar el rol?</span><br><b>Al inactivar el rol, este ya no se mostrará en el sistema.</b>',
+        '<span>¿Está seguro de que desea inactivar la sede?</span><br><b>Al inactivar la sede, éste ya no se mostrará como opción al momento de realizar nuevos registros en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOkDanger: true,
@@ -48,7 +48,7 @@ export class SedesComponent {
     this.modal.confirm({
       nzTitle: 'Activar sede',
       nzContent:
-        '<span>¿Está seguro de que desea activar la sede?</span><br><b>Al activar la sede, esta se volverá a mostrar en el sistema.</b>',
+        '<span>¿Está seguro de que desea activar la sede?</span><br><b>Al activar la sede, ésta opción volverá a mostrarse en los nuevos registros en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => console.log('OK'),

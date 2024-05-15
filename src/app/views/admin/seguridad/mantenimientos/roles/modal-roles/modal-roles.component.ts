@@ -28,7 +28,7 @@ export class ModalRolesComponent implements OnInit {
     this.modal.confirm({
       nzTitle: 'Confirmar edición',
       nzContent:
-        '<span>¿Está seguro de que desea editar el rol?</span><br><b>Todos los datos asociados, serán modifcados a la nueva descripción.</b>',
+        '<span>¿Está seguro de que desea editar el rol?</span><br><b>Todos los datos asociados serán modifcados a la nueva descripción.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => this.handleCancel(),

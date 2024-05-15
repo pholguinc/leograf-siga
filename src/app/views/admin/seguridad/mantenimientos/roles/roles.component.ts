@@ -33,7 +33,7 @@ export class RolesComponent {
     this.modal.confirm({
       nzTitle: 'Inactivar rol',
       nzContent:
-        '<span>¿Está seguro de que desea inactivar el rol?</span><br><b>Al inactivar el rol, este ya no se mostrará en el sistema.</b>',
+        '<span>¿Está seguro de que desea inactivar el rol?</span><br><b>Al inactivar el rol, éste ya no se mostrará como opción al momento de realizar nuevos registros en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOkDanger: true,
@@ -47,7 +47,7 @@ export class RolesComponent {
     this.modal.confirm({
       nzTitle: 'Activar rol',
       nzContent:
-        '<span>¿Está seguro de que desea activar el rol?</span><br><b>Al activar el rol, este se volverá a mostrar en el sistema.</b>',
+        '<span>¿Está seguro de que desea activar el rol?</span><br><b>Al activar el rol, ésta opción volverá a mostrarse en los nuevos registros en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => console.log('OK'),

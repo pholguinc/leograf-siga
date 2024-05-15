@@ -29,7 +29,7 @@ export class ModalSedesComponent {
     this.modal.confirm({
       nzTitle: 'Confirmar edición',
       nzContent:
-        '<span>¿Está seguro de que desea editar el sedes?</span><br><b>Todos los datos asociados, serán modifcados a la nueva descripción.</b>',
+        '<span>¿Está seguro de que desea editar el sedes?</span><br><b>Todos los datos asociados serán modifcados a la nueva descripción.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => this.handleCancel(),

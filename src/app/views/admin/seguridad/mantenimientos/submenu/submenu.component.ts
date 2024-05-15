@@ -34,7 +34,7 @@ export class SubmenuComponent {
     this.modal.confirm({
       nzTitle: 'Inactivar submenú',
       nzContent:
-        '<span>¿Está seguro de que desea inactivar el submenú?</span><br><b>Al inactivar el submenú, este ya no se mostrará en el sistema.</b>',
+        '<span>¿Está seguro de que desea inactivar el submenú?</span><br><b>Al inactivar el submenú, éste ya no se mostrará como opción al momento de realizar nuevos registros en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOkDanger: true,
@@ -48,7 +48,7 @@ export class SubmenuComponent {
     this.modal.confirm({
       nzTitle: 'Activar submenú',
       nzContent:
-        '<span>¿Está seguro de que desea activar el submenú?</span><br><b>Al activar el submenú, este se volverá a mostrar en el sistema.</b>',
+        '<span>¿Está seguro de que desea activar el submenú?</span><br><b>Al activar el submenú, ésta opción volverá a mostrarse en los nuevos registros en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => console.log('OK'),

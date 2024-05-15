@@ -33,7 +33,7 @@ export class ModulosComponent {
     this.modal.confirm({
       nzTitle: 'Inactivar módulo',
       nzContent:
-        '<span>¿Está seguro de que desea inactivar el módulo?</span><br><b>Al inactivar el módulo, este ya no se mostrará en el sistema.</b>',
+        '<span>¿Está seguro de que desea inactivar el módulo?</span><br><b>Al inactivar el módulo, éste ya no se mostrará como opción al momento de realizar nuevos registros en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOkDanger: true,
@@ -47,7 +47,7 @@ export class ModulosComponent {
     this.modal.confirm({
       nzTitle: 'Activar módulo',
       nzContent:
-        '<span>¿Está seguro de que desea activar el módulo?</span><br><b>Al activar el módulo, este se volverá a mostrar en el sistema.</b>',
+        '<span>¿Está seguro de que desea activar el módulo?</span><br><b>Al activar el módulo, ésta opción volverá a mostrarse en los nuevos registros en el sistema.</b>',
       nzOkText: 'Si',
       nzOkType: 'primary',
       nzOnOk: () => console.log('OK'),

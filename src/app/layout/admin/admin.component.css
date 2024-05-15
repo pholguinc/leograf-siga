@@ -131,3 +131,7 @@ nz-content {
   font-size: 20px;
   color:#000;
 }
+
+hr {
+  opacity: 0.5; /* Reduce la opacidad a la mitad */
+}
