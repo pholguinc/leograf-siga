@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class RecuperarContraseniaComponent {
 
+  isVisibleFormRecuperarContrasenia: boolean = true;
+  isVisibleEnvioCorreo: boolean = false;
+
+  fnEnvioCorreoConfirmacion(){
+    this.isVisibleFormRecuperarContrasenia = false;
+    this.isVisibleEnvioCorreo = true;
+  }
+
 }

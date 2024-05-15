@@ -5,6 +5,7 @@ import { AdminComponent } from './layout/admin/admin.component';
 import { RegistroLayoutComponent } from './layout/auth/registro/registro-layout-component.component';
 import { HomeLayoutComponent } from './layout/home/home-layout.component';
 import { HomeComponent } from './views/admin/home/home.component';
+import { RecuperarContraseniaLayoutComponent } from './layout/auth/recuperar-contrasenia/recuperar-contrasenia-layout.component';
 
 
 const routes: Routes = [
@@ -50,20 +51,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/auth/login/login.module').then((m) => m.LoginModule),
       },
-      {
-        path: 'recuperar-contrasenia',
-        loadChildren: () =>
-          import(
-            './views/auth/recuperar-contrasenia/recuperar-contrasenia.module'
-          ).then((m) => m.RecuperarContraseniaModule),
-      },
-      {
-        path: 'recuperar-contrasenia-aviso',
-        loadChildren: () =>
-          import(
-            './views/auth/recuperar-contrasenia-aviso/recuperar-contrasenia-aviso.module'
-          ).then((m) => m.RecuperarContraseniaAvisoModule),
-      },
+
       {
         path: 'registro/aviso',
         loadChildren: () =>
@@ -84,10 +72,23 @@ const routes: Routes = [
             (m) => m.RegistroModule
           ),
       },
+
     ],
   },
 
-
+  {
+    path: 'auth/recuperar-contrasenia',
+    component: RecuperarContraseniaLayoutComponent,
+    children:[
+      {
+        path: '',
+        loadChildren: () =>
+          import(
+            './views/auth/recuperar-contrasenia/recuperar-contrasenia.module'
+          ).then((m) => m.RecuperarContraseniaModule),
+      },
+    ]
+  },
 
 
   //Módulos
